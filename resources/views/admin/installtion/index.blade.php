@@ -60,7 +60,7 @@
 										<td>{{$ins->location}}</td>
 										<td>{{$ins->art->name}}</td>
 										<td>
-											<a href="{{route('arts.edit',$ins->id)}}"
+											<a href="{{route('installations.edit',$ins->id)}}"
 											   class="btn btn-primary">
 												Edit
 											</a>

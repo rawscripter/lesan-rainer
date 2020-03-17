@@ -116,37 +116,5 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	<!-- Modal -->
-	{{--    <div class="modal fade" id="uploadModalButton" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"--}}
-	{{--         aria-hidden="true">--}}
-	{{--        <div class="modal-dialog modal-lg" role="document">--}}
-	{{--            <div class="modal-content">--}}
-	{{--                <div class="modal-header">--}}
-	{{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-	{{--                        <span aria-hidden="true">&times;</span>--}}
-	{{--                    </button>--}}
-	{{--                </div>--}}
-	{{--                <div class="modal-body" style="height: 800px;">--}}
-	{{--                    <iframe src="{{route('admin.upload.image.page')}}" frameborder="0"--}}
-	{{--                            style="overflow:hidden;height:100%;width:100%" height="100%" width="50%"></iframe>--}}
-	{{--                </div>--}}
-	{{--            </div>--}}
-	{{--        </div>--}}
-	{{--    </div>--}}
-@endsection
 
-@section('footer')
-	<script src="{{asset('assets/admin/js/dragula.js')}}"></script>
-	<script>
-      /*Summernote editor*/
-      if ($("textarea").length) {
-          $('textarea').summernote({
-              height: 300,
-              tabsize: 2
-          });
-      }
-	
-	</script>
 @endsection

@@ -49,7 +49,7 @@ class SiteController extends Controller
         $collection = Collection::whereName($collection)->first();
         $page = 'collection';
         $collections = Collection::orderBy('created_at', 'asc')->get();
-        $arts = Art::where('collection_id', $collection->id)->whereArchive(0)->paginate(4);
+        $arts = Art::where('collection_id', $collection->id)->whereArchive(0)->paginate(8);
         return view('site.collection', compact('collections', 'page', 'collection', 'arts'));
     }
 
@@ -67,9 +67,9 @@ class SiteController extends Controller
         $collections = Collection::orderBy('created_at', 'asc')->get();
         if (isset($_GET['filter'])) {
             $type = $_GET['filter'];
-            $installations = Installation::where('type', $type)->paginate(1);
+            $installations = Installation::where('type', $type)->paginate(8);
         } else {
-            $installations = Installation::paginate(1);
+            $installations = Installation::paginate(8);
         }
         return view('site.inststallations', compact('collections', 'installations'));
     }

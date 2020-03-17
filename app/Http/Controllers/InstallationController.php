@@ -73,7 +73,8 @@ class InstallationController extends Controller
      */
     public function edit(Installation $installation)
     {
-        //
+        $arts = Art::pluck('name', 'id')->all();
+        return view('admin.installtion.edit', compact('installation', 'arts'));
     }
 
     /**
@@ -81,11 +82,23 @@ class InstallationController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Installation $installation
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Installation $installation)
     {
-        //
+        $data = $request->all();
+        if ($request->hasFile('image_1'))
+            $data['image_1'] = $this->uploadImage($request->image_1);
+        if ($request->hasFile('image_2'))
+            $data['image_2'] = $this->uploadImage($request->image_2);
+        if ($request->hasFile('image_3'))
+            $data['image_3'] = $this->uploadImage($request->image_3);
+        $installation = $installation->update($data);
+        if ($installation) {
+            return redirect()->back()->with('message', 'Added to Database');
+        } else {
+            return redirect()->back()->with('error', 'Something wrong. Please try after sometime.');
+        }
     }
 
     /**
