@@ -71,8 +71,8 @@
 							
 							<div class="col-12 col-md-6 m-auto">
 								<div class="form-group">
-									{{Form::label('collection_id', 'Select a Collection')}}
-									{{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Collection'])}}
+									{{Form::label('collection_id', 'Select a Sculptures')}}
+									{{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
 								</div>
 							</div>
 						</div>
@@ -97,7 +97,7 @@
 						</div>
 						<br>
 						<div class="form-group">
-							{{Form::submit('Create Art Work',['class'=>'btn btn-block btn-primary'])}}
+							{{Form::submit('Add Installation',['class'=>'btn btn-block btn-primary'])}}
 						</div>
 						{!! Form::close() !!}
 					</div>

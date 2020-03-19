@@ -4,7 +4,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Admin Dasboard</title>
+	<title>Admin Dashboard</title>
 	<!-- plugins:css -->
 	<link rel="stylesheet" href="{{asset('assets/admin/vendors/iconfonts/font-awesome/css/all.min.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/admin/vendors/css/vendor.bundle.base.css')}}">
@@ -93,12 +93,27 @@
 					</a>
 				</li>
 				
-				<li class="nav-item {{isset($page) ? $page == 'uploads' ? 'active' : '' :'' }}">
-					<a class="nav-link" href="{{route('admin.uploads')}}">
-						<i class="fas fa-window-restore menu-icon"></i>
-						<span class="menu-title">Uploads</span>
+				<li class="nav-item {{isset($page) ? $page == 'articles' ? 'active' : '' :'' }}">
+					<a class="nav-link" href="{{route('articles.index')}}">
+						<i class="fab fa-wpforms menu-icon"></i>
+						<span class="menu-title">Articles</span>
 					</a>
 				</li>
+				
+				
+				<li class="nav-item {{isset($page) ? $page == 'exhibitions' ? 'active' : '' :'' }}">
+					<a class="nav-link" href="{{route('articles.index')}}">
+						<i class="fab fa-wpforms menu-icon"></i>
+						<span class="menu-title">Exhibitions</span>
+					</a>
+				</li>
+				
+				{{--				<li class="nav-item {{isset($page) ? $page == 'uploads' ? 'active' : '' :'' }}">--}}
+				{{--					<a class="nav-link" href="{{route('admin.uploads')}}">--}}
+				{{--						<i class="fas fa-window-restore menu-icon"></i>--}}
+				{{--						<span class="menu-title">Uploads</span>--}}
+				{{--					</a>--}}
+				{{--				</li>--}}
 				
 				<li class="nav-item {{isset($page) ? $page == 'settings' ? 'active' : '' :'' }}">
 					<a class="nav-link collapsed" data-toggle="collapse" href="#editors" aria-expanded="false"
@@ -176,8 +191,6 @@
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 
-<script src="{{asset('assets/admin/vendors/lightgallery/js/lightgallery-all.min.js')}}"></script>
-<script src="{{asset('assets/admin/js/light-gallery.js')}}"></script>
 <script>
     $(document).ready(function () {
         $('select.select2').select2();

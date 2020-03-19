@@ -13,62 +13,7 @@ use Webpatser\Uuid\Uuid;
 
 class ImageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $page = 'uploads';
-        $images = Image::orderBy('created_at', 'DESC')->get();
-        return view('admin.images.index', compact('page', 'images'));
-    }
-
-    public function uploadImagesPage()
-    {
-        return view('admin.images.upload');
-    }
-
-    public function uploadImage(Request $request, Art $art)
-    {
-        $photos = $request->file('file');
-        if (!is_array($photos)) {
-            $photos = [$photos];
-        }
-        for ($i = 0; $i < count($photos); $i++) {
-            $photo = $photos[$i];
-            $imageName = $this->uploadArtImage($photo);
-            $image = Image::create(
-                ['name' => $imageName]
-            );
-            ArtImage::create([
-                'image_id' => $image->id,
-                'art_id' => $art->id
-            ]);
-        }
-        $title = 'Uploaded';
-        $body = "Uploaded a Image";
-        $this->addUserLogForCollection($title, $body);
-        return Response::json([
-            'message' => 'Image saved Successfully'
-        ], 200);
-    }
-
-    public function deleteImage(Image $image)
-    {
-        $this->UnlinkImage('images/arts/', $image->name);
-        $this->UnlinkImage('images/feature/', $image->name);
-        $this->UnlinkImage('images/thumb/', $image->name);
-        $res = $image->delete();
-        if ($res) {
-            $title = 'Deleted';
-            $body = 'Deleted a Image ';
-            $this->addUserLogForCollection($title, $body);
-        }
-        return redirect()->back()->with('message', 'Image Deleted from Database');
-    }
-
-    private function uploadArtImage($image)
+    public static function uploadImage($image)
     {
         $imageName = Uuid::generate()->string . '.' . $image->getClientOriginalExtension();
         $destinationPath = public_path('/images/thumb');
@@ -86,23 +31,5 @@ class ImageController extends Controller
         $destinationPath = public_path('/images/arts');
         $img->save($destinationPath . '/' . $imageName);
         return $imageName;
-    }
-
-    private function UnlinkImage($filepath, $fileName)
-    {
-        $old_image = $filepath . $fileName;
-        if (file_exists($old_image)) {
-            @unlink($old_image);
-        }
-    }
-
-    public function addUserLogForCollection($title, $body)
-    {
-        $title = "Image " . $title;
-        $body = Auth::user()->name . ' ' . $body;
-        UserLog::create([
-            'title' => $title,
-            'body' => $body
-        ]);
     }
 }

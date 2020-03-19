@@ -93,7 +93,7 @@
 						
 						<br>
 						<div class="form-group">
-							{{Form::submit('Create Art Work',['class'=>'btn btn-block btn-primary'])}}
+							{{Form::submit('Add Installation',['class'=>'btn btn-block btn-primary'])}}
 						</div>
 						{!! Form::close() !!}
 					</div>

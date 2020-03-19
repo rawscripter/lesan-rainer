@@ -43,7 +43,7 @@
 				@endif
 				
 				<div class="row">
-					<div class="col-12 text-right">
+					<div class="col-12col-12 col-md-8 m-auto text-right">
 						<button id="uploadArtImages" class="btn btn-primary" data-toggle="modal" data-keyboard="false"
 						        data-backdrop="static"
 						        data-target="#exampleModal">Upload
@@ -80,8 +80,8 @@
 							
 							<div class="col-12 col-md-6 m-auto">
 								<div class="form-group">
-									{{Form::label('collection_id', 'Select a Collection')}}
-									{{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Collection'])}}
+									{{Form::label('collection_id', 'Select a Sculptures')}}
+									{{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
 								</div>
 							</div>
 						</div>
@@ -162,7 +162,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							{{Form::submit('Update Art',['class'=>'btn btn-block btn-primary'])}}
+							{{Form::submit('Update Installation',['class'=>'btn btn-block btn-primary'])}}
 						</div>
 						{!! Form::close() !!}
 					</div>

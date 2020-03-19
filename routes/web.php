@@ -18,12 +18,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/admin/collections', 'CollectionController');
     Route::resource('/admin/arts', 'ArtController');
     Route::resource('/admin/installations', 'InstallationController');
+    Route::resource('/admin/exhibitions', 'ExhibitonController');
+    Route::resource('/admin/articles', 'ArticleController');
     Route::get('/admin/archives/arts', 'ArtArchiveController@showAllArchiveArts')->name('admin.archives');
 //    for image uploads
-    Route::get('/admin/uploads', 'ImageController@index')->name('admin.uploads');
-    Route::get('/admin/upload/new/image', 'ImageController@uploadImagesPage')->name('admin.upload.image.page');
-    Route::post('/admin/upload/{art}/image', 'ImageController@uploadImage')->name('admin.upload.image');
-    Route::delete('/admin/upload/{image}/delete', 'ImageController@deleteImage')->name('admin.upload.image.delete');
+//    Route::get('/admin/uploads', 'ImageController@index')->name('admin.uploads');
+//    Route::get('/admin/upload/new/image', 'ImageController@uploadImagesPage')->name('admin.upload.image.page');
+//    Route::post('/admin/upload/{art}/image', 'ImageController@uploadImage')->name('admin.upload.image');
+//    Route::delete('/admin/upload/{image}/delete', 'ImageController@deleteImage')->name('admin.upload.image.delete');
 //    for archive and restore the logs
     Route::get('/admin/archive/{art}/art', 'ArtArchiveController@archiveArt')->name('admin.archive.art');
     Route::get('/admin/restore/{art}/art', 'ArtArchiveController@restoreArt')->name('admin.restore.art');
