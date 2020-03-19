@@ -2,55 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52140739-b501-4b0e-a6ad-085ddff091cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Article.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Exhibiton.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ExhibitonController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_17_232635_create_articles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_18_002056_create_exhibitons_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/5f5a0f10-68cd-11ea-b107-29490a57173f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/748eb630-68cd-11ea-ba57-719775c24b13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/83c9d880-68cd-11ea-959b-877ec5b4c147.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/a51f21a0-68cf-11ea-92f4-c54bdfddeabd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/ad30aae0-68cd-11ea-a0d2-0130a2c53dfe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/b4ba57e0-68cf-11ea-b384-93a8add2483d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/bcbe0ad0-68cd-11ea-afa7-cddee7bfc7e7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/d9e263f0-68cd-11ea-844a-5d68589b1631.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/5f5a0f10-68cd-11ea-b107-29490a57173f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/748eb630-68cd-11ea-ba57-719775c24b13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/83c9d880-68cd-11ea-959b-877ec5b4c147.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/a51f21a0-68cf-11ea-92f4-c54bdfddeabd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/ad30aae0-68cd-11ea-a0d2-0130a2c53dfe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/b4ba57e0-68cf-11ea-b384-93a8add2483d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/bcbe0ad0-68cd-11ea-afa7-cddee7bfc7e7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/d9e263f0-68cd-11ea-844a-5d68589b1631.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/5f5a0f10-68cd-11ea-b107-29490a57173f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/748eb630-68cd-11ea-ba57-719775c24b13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/83c9d880-68cd-11ea-959b-877ec5b4c147.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/a51f21a0-68cf-11ea-92f4-c54bdfddeabd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/ad30aae0-68cd-11ea-a0d2-0130a2c53dfe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/b4ba57e0-68cf-11ea-b384-93a8add2483d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/bcbe0ad0-68cd-11ea-afa7-cddee7bfc7e7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/d9e263f0-68cd-11ea-844a-5d68589b1631.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/article/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/article/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/article/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/exhibition/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/exhibition/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/exhibition/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aljoe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aljoe.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/art/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/art/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/art/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/art/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/art/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/art/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/installtion/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/installtion/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/art-pdf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/art-pdf.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,6 +235,7 @@
       <workItem from="1584087963757" duration="3510000" />
       <workItem from="1584440879227" duration="19215000" />
       <workItem from="1584501867375" duration="4043000" />
+      <workItem from="1584632940873" duration="1507000" />
     </task>
     <servers />
   </component>
