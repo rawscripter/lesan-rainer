@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52140739-b501-4b0e-a6ad-085ddff091cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ExhibitionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/6b5d1cc0-6a91-11ea-aada-cb415bb1b7fd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/arts/7705ff50-6a91-11ea-af65-47f7a5a8da47.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/6b5d1cc0-6a91-11ea-aada-cb415bb1b7fd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/7705ff50-6a91-11ea-af65-47f7a5a8da47.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/6b5d1cc0-6a91-11ea-aada-cb415bb1b7fd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/7705ff50-6a91-11ea-af65-47f7a5a8da47.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exhibiton.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exhibition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExhibitonController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_12_183600_create_arts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_12_183600_create_arts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/exhibition/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exhibition/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/exhibition/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exhibition/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/exhibition/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exhibition/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +233,7 @@
       <workItem from="1584440879227" duration="19215000" />
       <workItem from="1584501867375" duration="4043000" />
       <workItem from="1584632940873" duration="1507000" />
-      <workItem from="1584696955460" duration="2265000" />
+      <workItem from="1584696955460" duration="2507000" />
     </task>
     <servers />
   </component>
@@ -334,10 +318,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="250" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584087985757" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1584699011030">
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1584699397823">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584699011030" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584699397823" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1584505885582" />
   </component>
 </project>
