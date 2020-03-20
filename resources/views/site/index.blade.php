@@ -1,7 +1,6 @@
 @extends('layouts.user.layout')
 @section('body')
     <div class="main_content">
-
         @if($arts->count() > 0)
             <div class="slider_area">
                 <div class="row m-0 p-0">

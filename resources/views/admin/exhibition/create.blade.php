@@ -1,7 +1,5 @@
 @extends('layouts.admin.layout')
-@section('head')
-    <link rel="stylesheet" href="{{asset('assets/admin/vendors/summernote/dist/summernote-bs4.css')}}">
-@endsection
+
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
@@ -75,18 +73,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('footer')
-    <script src="{{asset('assets/admin/vendors/summernote/dist/summernote-bs4.min.js')}}"></script>
-    <script !src="">
-        /*Summernote editor*/
-        if ($("textarea").length) {
-            $('textarea').summernote({
-                height: 300,
-                tabsize: 2
-            });
-        }
-
-    </script>
 @endsection

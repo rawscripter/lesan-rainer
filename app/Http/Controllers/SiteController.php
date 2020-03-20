@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\AboutPageSetting;
 use App\Art;
+use App\Article;
 use App\Collection;
+use App\Exhibition;
 use App\HomePageSetting;
 use App\Installation;
 use App\Mail\SendMail;
@@ -64,7 +66,7 @@ class SiteController extends Controller
     public function showInstallations()
     {
         $page = 'installations';
-        $collections = Collection::orderBy('created_at', 'asc')->get();
+        $collections = Collection::orderBy('created_at', 'desc')->get();
         if (isset($_GET['filter'])) {
             $type = $_GET['filter'];
             $installations = Installation::where('type', $type)->paginate(8);
@@ -72,6 +74,35 @@ class SiteController extends Controller
             $installations = Installation::paginate(8);
         }
         return view('site.inststallations', compact('collections', 'installations'));
+    }
+
+    public function articles()
+    {
+        $collections = Collection::orderBy('name', 'asc')->get();
+        $articles = Article::orderBy('created_at', 'desc')->get();
+
+        return view('site.articles', compact('collections', 'articles'));
+    }
+
+    public function readArticle($slug)
+    {
+        $article = Article::where('slug', $slug)->first();
+        $collections = Collection::orderBy('name', 'asc')->get();
+        return view('site.singleArticle', compact('article', 'collections'));
+    }
+
+    public function exhibitions()
+    {
+        $collections = Collection::orderBy('name', 'asc')->get();
+        $exhibitions = Exhibition::orderBy('created_at', 'desc')->get();
+        return view('site.exhibitions', compact('exhibitions', 'collections'));
+    }
+
+    public function showExhibitionDetailsModal(Exhibition $exhibition)
+    {
+        return response()->json([
+            'modal' => view('site.exhibition-modal')->with('exhibition', $exhibition)->render()
+        ]);
     }
 
     public function addVisitor()

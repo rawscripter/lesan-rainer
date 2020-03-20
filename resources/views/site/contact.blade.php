@@ -46,12 +46,16 @@
                         </div>
                         <div class="contact_mail subscribe_form">
                             <p>For Invitations & Updates, feelfree to sign up to my newsletter!</p>
-                            <form action="#">
-                                <input type="email" placeholder="Email" name="sub_email">
-                                <div class="form-group text-center mt-3">
-                                    <button type="submit" class="btn btn-light rounded-0 pl-4 pr-4">SUBSCRIBE</button>
-                                </div>
-                            </form>
+                            <div class="form-group text-center mt-3">
+                                <form id="subscribe_from" method="post" action="https://oi.vresp.com?fid=22709e0d55"
+                                      target="vr_optin_popup"
+                                      onsubmit="window.open( 'http://www.verticalresponse.com', 'vr_optin_popup', 'scrollbars=yes,width=600,height=450' ); return true;">
+                                    <div>
+                                        <input type="submit" value="Sign Up"  style="border: 1px solid #999; padding: 5px;"/><br/>
+                                        <br/>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
 

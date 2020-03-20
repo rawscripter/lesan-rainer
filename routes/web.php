@@ -3,6 +3,10 @@ Auth::routes();
 // request for home page
 Route::get('/', 'SiteController@index')->name('site.home');
 Route::get('/about', 'SiteController@about')->name('about');
+Route::get('/articles', 'SiteController@articles')->name('articles');
+Route::get('/article/{slug}', 'SiteController@readArticle')->name('read.article');
+Route::get('/exhibitions', 'SiteController@exhibitions')->name('exhibitions');
+Route::get('/exhibitions/{exhibition}/details', 'SiteController@showExhibitionDetailsModal');
 Route::get('/contact-us', 'SiteController@contact')->name('contact');
 Route::get('/sculptures/{collection}', 'SiteController@showCollection')->name('site.collection');
 Route::get('/installations', 'SiteController@showInstallations')->name('site.installations');

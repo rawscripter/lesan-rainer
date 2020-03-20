@@ -40,6 +40,7 @@ class ArticleController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        $data['details'] = trim($request->details);
         if ($request->hasFile('image'))
             $data['image'] = ImageController::uploadImage($request->image);
         $article = Article::create($data);
@@ -83,6 +84,7 @@ class ArticleController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        $data['details'] = trim($request->details);
         if ($request->hasFile('image'))
             $data['image'] = ImageController::uploadImage($request->image);
         $article = $article->update($data);
