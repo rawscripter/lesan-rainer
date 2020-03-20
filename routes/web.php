@@ -18,7 +18,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/admin/collections', 'CollectionController');
     Route::resource('/admin/arts', 'ArtController');
     Route::resource('/admin/installations', 'InstallationController');
-    Route::resource('/admin/exhibitions', 'ExhibitonController');
+    Route::resource('/admin/exhibitions', 'ExhibitionController');
     Route::resource('/admin/articles', 'ArticleController');
     Route::get('/admin/archives/arts', 'ArtArchiveController@showAllArchiveArts')->name('admin.archives');
 //    for image uploads

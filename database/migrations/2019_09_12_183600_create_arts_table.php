@@ -24,6 +24,7 @@ class CreateArtsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->string('description')->nullable();
             $table->string('status')->default(0);
+            $table->integer('archive')->nullable();
             $table->timestamps();
         });
     }

@@ -25558,8 +25558,8 @@ dl li {
 }
 
 .table td img, .jsgrid .jsgrid-table td img {
-    width: 120px;
-    height: 120px;
+    width: 64px;
+    height: 64px;
 }
 
 .table td .badge, .jsgrid .jsgrid-table td .badge {
