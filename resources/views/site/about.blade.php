@@ -34,12 +34,12 @@
         </div>
 
         <div class=" text-center">
-            <div class="row m-0 p-0">
+            <div class="row mb-5 p-0">
                 <div class="col-md-6 m-auto">
                     <div class="contact_mail subscribe_form">
-
                         <div class="row">
-                            <div class="col-6 p-4"><p>For Invitations & Updates, feelfree to sign up to my newsletter!</p>
+                            <div class="col-6 p-4"><p>For Invitations & Updates, feelfree to sign up to my
+                                    newsletter!</p>
                             </div>
                             <div class="col-6">
                                 <div class="form-group text-center mt-4">

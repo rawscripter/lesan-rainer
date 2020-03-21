@@ -36,7 +36,7 @@
 
                         @endforeach
 
-                        {{--                        {{ $art->links() }}--}}
+                        {{ $articles->links() }}
                     </div>
                 </div>
             </div>

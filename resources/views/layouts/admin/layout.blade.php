@@ -108,12 +108,13 @@
                     </a>
                 </li>
 
-                {{--				<li class="nav-item {{isset($page) ? $page == 'uploads' ? 'active' : '' :'' }}">--}}
-                {{--					<a class="nav-link" href="{{route('admin.uploads')}}">--}}
-                {{--						<i class="fas fa-window-restore menu-icon"></i>--}}
-                {{--						<span class="menu-title">Uploads</span>--}}
-                {{--					</a>--}}
-                {{--				</li>--}}
+                <li class="nav-item {{isset($page) ? $page == 'users' ? 'active' : '' :'' }}">
+                    <a class="nav-link" href="{{route('users.index')}}">
+                        <i class="fab fa-wpforms menu-icon"></i>
+                        <span class="menu-title">Users</span>
+                    </a>
+                </li>
+
 
                 <li class="nav-item {{isset($page) ? $page == 'settings' ? 'active' : '' :'' }}">
                     <a class="nav-link collapsed" data-toggle="collapse" href="#editors" aria-expanded="false"

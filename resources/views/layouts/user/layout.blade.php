@@ -69,7 +69,9 @@
                         </a>
                     @endguest
                     @auth()
-                        <a href="/admin" style="color: #fff" class="btn btn-default">Welcom, {{auth()->user()->name}}!
+                        <a href="/user/logout" style="color: #fff"
+                           class="btn btn-default">Welcome, {{auth()->user()->name}}
+                            !
                             <img
                                 src="{{asset('assets/user/images/icon/Logout Icon.svg')}}" style="width: 13%;"
                                 alt=""></a>

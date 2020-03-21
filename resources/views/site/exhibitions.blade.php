@@ -37,7 +37,7 @@
                             </div>
                         @endforeach
 
-                        {{--                        {{ $installations->appends($_GET)->links() }}--}}
+                        {{ $exhibitions->appends($_GET)->links() }}
                     </div>
                 </div>
             </div>

@@ -71,7 +71,7 @@ class SiteController extends Controller
             $type = $_GET['filter'];
             $installations = Installation::where('type', $type)->paginate(8);
         } else {
-            $installations = Installation::paginate(8);
+            $installations = Installation::paginate(81);
         }
         return view('site.inststallations', compact('collections', 'installations'));
     }
@@ -79,7 +79,7 @@ class SiteController extends Controller
     public function articles()
     {
         $collections = Collection::orderBy('name', 'asc')->get();
-        $articles = Article::orderBy('created_at', 'desc')->get();
+        $articles = Article::orderBy('created_at', 'desc')->paginate(6);
 
         return view('site.articles', compact('collections', 'articles'));
     }
@@ -94,7 +94,7 @@ class SiteController extends Controller
     public function exhibitions()
     {
         $collections = Collection::orderBy('name', 'asc')->get();
-        $exhibitions = Exhibition::orderBy('created_at', 'desc')->get();
+        $exhibitions = Exhibition::orderBy('created_at', 'desc')->paginate(6);
         return view('site.exhibitions', compact('exhibitions', 'collections'));
     }
 
@@ -169,5 +169,11 @@ class SiteController extends Controller
         );
         Mail::to('lesan@tridedesigns.com')->send(new SendMail($data));
         return redirect()->back()->with('success', 'Thanks for contacting us!');
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect('/');
     }
 }
