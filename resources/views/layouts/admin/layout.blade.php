@@ -75,7 +75,7 @@
                 <li class="nav-item {{isset($page) ? $page == 'collections' ? 'active' : '' :'' }}">
                     <a class="nav-link" href="{{route('collections.index')}}">
                         <i class="fab fa-trello menu-icon"></i>
-                        <span class="menu-title">Sculptures</span>
+                        <span class="menu-title">Collections</span>
                     </a>
                 </li>
 

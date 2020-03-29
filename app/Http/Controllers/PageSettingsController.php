@@ -65,6 +65,8 @@ class PageSettingsController extends Controller
                 'heading' => $input['heading'],
                 'contents' => $input['contents'],
                 'image' => $input['image'],
+                'info_url' => $input['info_url'],
+                'statement' => $input['statement'],
             ]);
         } else {
 

@@ -28,6 +28,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('noreply@tridedesigns.com')->subject('New form submission from ALJOE ALMAZAN ')->view('email.email')->with('data', $this->data);
+        return $this->from('noreply@tridedesigns.com')->subject('New Form Submission')->view('email.email')->with('data', $this->data);
     }
 }

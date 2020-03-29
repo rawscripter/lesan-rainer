@@ -43,7 +43,7 @@
                         <div class="art_desc text-center">
                             <h3 class="art_name p-2">{{$exhibition->title}}</h3>
                             <h3>{{$exhibition->year}}</h3>
-                            <h3 class="ex-des">{!! $exhibition->body !!}</h3>
+                            <h3 class="ex-des show-text-as-white-space">{!! $exhibition->body !!}</h3>
                         </div>
                     </div>
                 </div>

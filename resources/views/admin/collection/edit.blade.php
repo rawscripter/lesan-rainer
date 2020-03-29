@@ -4,12 +4,12 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                Edit Sculpture
+                Edit Collection
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('collections.index')}}">Sculptures</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Edit Sculpture</li>
+                    <li class="breadcrumb-item"><a href="{{route('collections.index')}}">Collections</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Collection</li>
                 </ol>
             </nav>
         </div>
@@ -30,12 +30,12 @@
                         {!! Form::model($collection,['route' => ['collections.update',$collection->id]]) !!}
                         {{ method_field('PUT') }}
                         <div class="form-group">
-                            {{Form::label('name', 'Sculpture Name')}}
+                            {{Form::label('name', 'Collection Name')}}
                             {{Form::text('name',null ,['class'=>'form-control','required'])}}
 
                         </div>
                         <div class="form-group">
-                            {{Form::submit('Update Sculpture',['class'=>'btn btn-block btn-primary'])}}
+                            {{Form::submit('Update Collection',['class'=>'btn btn-block btn-primary'])}}
                         </div>
                         {!! Form::close() !!}
                     </div>

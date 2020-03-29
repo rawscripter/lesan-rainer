@@ -7,13 +7,14 @@ use App\Collection;
 use App\UserLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class CollectionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|View
      */
     public function index()
     {
@@ -25,7 +26,7 @@ class CollectionController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|View
      */
     public function create()
     {
@@ -47,7 +48,7 @@ class CollectionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -62,7 +63,7 @@ class CollectionController extends Controller
             $this->addUserLogForCollection($title, $body);
         }
 
-        return redirect()->back()->with('message', 'Sculpture Added to Database');
+        return redirect()->back()->with('message', 'Collection Added to Database');
 
     }
 
@@ -70,7 +71,7 @@ class CollectionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\c $c
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|View
      */
     public function edit(Collection $collection)
     {
@@ -82,7 +83,7 @@ class CollectionController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\c $c
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Collection $collection)
     {
@@ -97,12 +98,12 @@ class CollectionController extends Controller
             $this->addUserLogForCollection($title, $body);
         }
 
-        return redirect()->back()->with('message', 'Sculpture Updated to Database');
+        return redirect()->back()->with('message', 'Collection Updated to Database');
     }
 
     /**
      * Remove the specified resource from storage.
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Collection $collection)
     {
@@ -115,7 +116,7 @@ class CollectionController extends Controller
 
 
         $collection->delete();
-        return redirect()->back()->with('message', 'Sculpture deleted from Database');
+        return redirect()->back()->with('message', 'Collection deleted from Database');
     }
 
     public function addUserLogForCollection($title, $body)

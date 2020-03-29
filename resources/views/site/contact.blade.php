@@ -42,16 +42,16 @@
                     <div class="col-md-4 col-lg-4 ">
                         <div class="contact_mail">
                             <img style="width: 20%;" src="{{asset('assets/user/images/icon/Email Icon.svg')}}" alt="">
-                            <span><a target="_blank" href="//mail.google.com">Almazana@gmail.com</a></span>
+                            <span><a target="_blank" href="//mail.google.com">Rainerlagemann@me.com</a></span>
                         </div>
                         <div class="contact_mail subscribe_form">
-                            <p>For Invitations & Updates, feelfree to sign up to my newsletter!</p>
+                            <p>Feel free to sign up for our newsletter!</p>
                             <div class="form-group text-center mt-3">
                                 <form id="subscribe_from" method="post" action="https://oi.vresp.com?fid=22709e0d55"
                                       target="vr_optin_popup"
                                       onsubmit="window.open( 'http://www.verticalresponse.com', 'vr_optin_popup', 'scrollbars=yes,width=600,height=450' ); return true;">
                                     <div>
-                                        <input type="submit" value="Sign Up"  style="border: 1px solid #999; padding: 5px;"/><br/>
+                                        <input type="submit" value="Sign Up" class="btn-light"  style="border: 1px solid #999; padding: 5px;"/><br/>
                                         <br/>
                                     </div>
                                 </form>

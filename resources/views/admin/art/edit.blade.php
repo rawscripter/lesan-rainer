@@ -80,7 +80,7 @@
 
                             <div class="col-12 col-md-6 m-auto">
                                 <div class="form-group">
-                                    {{Form::label('collection_id', 'Select a Sculptures')}}
+                                    {{Form::label('collection_id', 'Select a Collection')}}
                                     {{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
                                 </div>
                             </div>
@@ -222,18 +222,4 @@
         </div>
     </div>
 
-@endsection
-
-@section('footer')
-    <script src="{{asset('assets/admin/js/dragula.js')}}"></script>
-    <script>
-        /*Summernote editor*/
-        if ($("textarea").length) {
-            $('textarea').summernote({
-                height: 300,
-                tabsize: 2
-            });
-        }
-
-    </script>
 @endsection

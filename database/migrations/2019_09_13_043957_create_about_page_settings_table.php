@@ -18,6 +18,7 @@ class CreateAboutPageSettingsTable extends Migration
             $table->string('heading')->nullable();
             $table->text('contents')->nullable();
             $table->string('image')->nullable();
+            $table->string('info_url')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
         });

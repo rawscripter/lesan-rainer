@@ -41,7 +41,7 @@
             <div class="row m-0 p-0">
                 <div class="col-lg-6 col-md-10 col-12 m-auto">
                     <h2 class="pt-4 mb-4">{{$homePageContents->heading}}</h2>
-                    <p style="white-space: pre-line">{!! $homePageContents->contents !!}</p>
+                    <p class="show-text-as-white-space">{!! $homePageContents->contents !!}</p>
                     @if(!empty($homePageContents->url) && !empty($homePageContents->button_text))
                         <a href="{{$homePageContents->url}}"
                            class="btn btn-outline-light mt-3  rounded-0">{{$homePageContents->button_text}}</a>

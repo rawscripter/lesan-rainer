@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Rainer </title>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
+    <link rel="icon" href="{{asset('assets/user/images/icon/Logo Signature.svg')}}">
+
     <!--======================== fontawsome css======================-->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
     <!--======================== bootstrap css ========================-->
@@ -17,6 +19,23 @@
     <link rel="stylesheet" href="{{asset('assets/user/css/responsive.css')}}">
 
     @yield('header')
+    <style>
+        div#loginModal {
+            background: #ffffff14;
+            position: absolute;
+            padding-top: 200px;
+        }
+
+        div#loginModal input {
+            margin-top: 15px;
+            border-radius: 0px;
+            color: #fff;
+        }
+
+        div#loginModal input:focus, div#loginModal input:visited {
+            background: transparent !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -63,7 +82,8 @@
                 </ul>
                 <form class="my-2 my-lg-0 heade-user-button">
                     @guest()
-                        <a href="/login" style="color: #fff" class="btn btn-default">
+                        <a href="#" style="color: #fff" class="btn btn-default" data-toggle="modal"
+                           data-target="#loginModal">
                             <img src="{{asset('assets/user/images/icon/Login Icon.svg')}}" style="width: 13%;" alt="">
                             LOGIN
                         </a>
@@ -85,6 +105,46 @@
 @yield('body')
 
 {{--<a href="#" id="scroll" style="display: none;"><span></span></a>--}}
+
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body contact_form">
+                <h3 class="text-center text-white">Login</h3>
+                <form method="POST" id="popupLoginModal" action="{{ route('login') }}" class="pt-3">
+                    @csrf
+                    <div class="form-group">
+                        <input type="email" required
+                               class="form-control form-control-lg"
+                               id="exampleInputEmail1"
+                               placeholder="email"
+                               name="email"
+                               autocomplete="off"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input type="password" required
+                               name="password"
+                               class="form-control form-control-lg"
+                               id="exampleInputPassword1"
+                               autocomplete="off"
+                               placeholder="Password">
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit"
+                                class="btn btn-block border-0 btn-light btn-lg font-weight-medium auth-form-btn">
+                            {{ __('Login') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <footer class="footer_area">
     <div class="container">
         <div class="row">

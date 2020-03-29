@@ -71,7 +71,7 @@
 
                             <div class="col-12 col-md-6 m-auto">
                                 <div class="form-group">
-                                    {{Form::label('collection_id', 'Select a Sculptures')}}
+                                    {{Form::label('collection_id', 'Select a Collection')}}
                                     {{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="form-group">
                             {{Form::label('hidden_info', 'Hidden Information')}}
-                            {{Form::textarea('hidden_info', '',['class'=>'form-control'])}}
+                            {{Form::textarea('hidden_info', null,['class'=>'form-control'])}}
                         </div>
 
                         <div class="form-group">

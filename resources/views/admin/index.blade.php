@@ -1,6 +1,6 @@
 @extends('layouts.admin.layout')
 @section('content')
-	
+
 	<style>
 		.card.card-statistics {
 			background: linear-gradient(85deg, #06b76b, #f5a623);
@@ -19,11 +19,11 @@
 					<div class="card card-statistics">
 						<div class="card-body">
 							<div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
-								
+
 								<div class="statistics-item">
 									<p>
 										<i class="icon-sm fab fa-trello menu-icon mr-2"></i>
-										Sculptures
+                                        Collections
 									</p>
 									<h2>{{$collections}}</h2>
 								</div>
@@ -33,7 +33,7 @@
 										Art Works
 									</p>
 									<h2>{{$activeArts}}</h2>
-								
+
 								</div>
 								<div class="statistics-item">
 									<p>
@@ -41,9 +41,9 @@
 										Archive Arts
 									</p>
 									<h2>{{$archiveArts}}</h2>
-								
+
 								</div>
-								
+
 								<div class="statistics-item">
 									<p>
 										<i class="icon-sm fas fa-users mr-2"></i>
@@ -63,7 +63,7 @@
 							<h4 class="card-title">Recent Activities</h4>
 							<div class="mt-5">
 								<div class="timeline">
-									
+
 									@php
 										$i = 1;
 									@endphp
@@ -85,14 +85,14 @@
 												</div>
 											</div>
 										</div>
-										
+
 										@php
 											$i++;
 										@endphp
 									@endforeach
 								</div>
 							</div>
-							
+
 							<div class="view-all-logs text-center">
 								<a href="{{route('admin.logs')}}" class="btn btn-default text-success">View All Logs</a>
 							</div>
@@ -101,8 +101,8 @@
 				</div>
 			</div>
 		</div>
-		
-		
+
+
 		<!-- content-wrapper ends -->
 		<!-- partial:partials/_footer.html -->
 		<!-- partial -->

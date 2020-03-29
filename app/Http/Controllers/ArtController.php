@@ -45,8 +45,10 @@ class ArtController extends Controller
      */
     public function store(Request $request)
     {
-//        return $request->all();
+
         $data = $this->validateArtReq($request);
+        $data['hidden_info'] = $request->hidden_info;
+
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadArtImage($request);
         }
@@ -77,7 +79,7 @@ class ArtController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Art $art
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(Art $art)
     {
@@ -93,11 +95,12 @@ class ArtController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Art $art
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Art $art)
     {
         $data = $this->validateArtReq($request);
+        $data['hidden_info'] = $request->hidden_info;;
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadArtImage($request);
             $this->UnlinkImage('images/arts/', $art->image);

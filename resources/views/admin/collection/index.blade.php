@@ -12,7 +12,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">All Sculptures</li>
+                    <li class="breadcrumb-item active" aria-current="page">All Collections</li>
                 </ol>
             </nav>
         </div>
@@ -32,7 +32,7 @@
                     <div class="col-12">
                         <div class="create-btn text-right">
                             <a href="{{route('collections.create')}}"
-                               class="btn btn-primary">Add New Sculpture</a><br>
+                               class="btn btn-primary">Add New Collection</a><br>
                         </div>
                     </div>
                     <div class="col-12 mt-5">
@@ -44,7 +44,7 @@
                                 <thead>
                                 <tr role="row">
                                     <th>Sl.</th>
-                                    <th>Sculpture Name</th>
+                                    <th>Collection Name</th>
                                     <th>Arts</th>
                                     <th>Created At</th>
                                     <th>Added By</th>

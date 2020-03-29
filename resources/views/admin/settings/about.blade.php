@@ -30,7 +30,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 m-auto d-block text-center">
-                                        <img src="/images/pages/{{$aboutPage->image}}" style="max-height: 210px" class="img-thumbnail img-responsive"
+                                        <img src="/images/pages/{{$aboutPage->image}}" style="max-height: 210px"
+                                             class="img-thumbnail img-responsive"
                                              alt="">
                                     </div>
                                 </div>
@@ -38,6 +39,15 @@
                                     {{Form::label('heading', 'Heading')}}
                                     {{Form::text('heading', null,['class'=>'form-control'])}}
                                 </div>
+                                <div class="form-group">
+                                    {{Form::label('info_url', 'Info Url')}}
+                                    {{Form::text('info_url', null,['class'=>'form-control'])}}
+                                </div>
+                                <div class="form-group">
+                                    {{Form::label('statement', 'Artist Statement')}}
+                                    {{Form::textarea('statement', null,['class'=>'form-control'])}}
+                                </div>
+
                                 <div class="form-group">
                                     {{Form::label('contents', 'Contents')}}
                                     {{Form::textarea('contents', null,['class'=>'form-control'])}}

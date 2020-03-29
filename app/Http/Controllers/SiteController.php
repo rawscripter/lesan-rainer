@@ -167,7 +167,7 @@ class SiteController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
         );
-        Mail::to('lesan@tridedesigns.com')->send(new SendMail($data));
+        Mail::to('rainerlagemann@me.com')->send(new SendMail($data));
         return redirect()->back()->with('success', 'Thanks for contacting us!');
     }
 

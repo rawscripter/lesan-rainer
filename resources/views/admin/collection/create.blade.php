@@ -7,12 +7,12 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                Create New Sculpture
+                Create New Collection
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('collections.index')}}">Sculptures</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">New Sculpture</li>
+                    <li class="breadcrumb-item"><a href="{{route('collections.index')}}">Collections</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New Collection</li>
                 </ol>
             </nav>
         </div>
@@ -33,12 +33,12 @@
                     <div class="col-12 col-md-6 m-auto">
                         {!! Form::open(['url' => route('collections.store')]) !!}
                         <div class="form-group">
-                            {{Form::label('name', 'Sculpture Name')}}
+                            {{Form::label('name', 'Collection Name')}}
                             {{Form::text('name', '',['class'=>'form-control','required'])}}
 
                         </div>
                         <div class="form-group">
-                            {{Form::submit('Create New Sculpture',['class'=>'btn btn-block btn-primary'])}}
+                            {{Form::submit('Create New Collection',['class'=>'btn btn-block btn-primary'])}}
                         </div>
                         {!! Form::close() !!}
                     </div>

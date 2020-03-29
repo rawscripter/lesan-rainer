@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/archive/{art}/art', 'ArtArchiveController@archiveArt')->name('admin.archive.art');
     Route::get('/admin/restore/{art}/art', 'ArtArchiveController@restoreArt')->name('admin.restore.art');
     Route::get('/admin/logs', 'AdminController@showAllLogs')->name('admin.logs');
+    Route::post('/admin/upload/{art}/image', 'ImageController@uploadImage')->name('admin.upload.image');
     Route::get('/admin/home/page/settings', 'PageSettingsController@homePageSettings')->name('admin.home.page.settings');
     Route::post('/admin/home/page/settings/update', 'PageSettingsController@updateHomePageSettings')->name('admin.home.page.settings.update');
     Route::get('/admin/about/page/settings', 'PageSettingsController@aboutPageSettings')->name('admin.about.page.settings');

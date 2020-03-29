@@ -19,7 +19,8 @@
             text-align: justify;
             margin-top: -60px;
         }
-        .article-details p{
+
+        .article-details p {
             white-space: pre-wrap;
         }
 
@@ -44,12 +45,12 @@
                         <img width="100%"
                              src="/images/arts/{{$article->image}}" alt="">
                     </div>
-                    <div class="article-details">
+                    <div class="article-details show-text-as-white-space">
                         <p> {!! $article->details !!}</p>
                     </div>
                     <br>
 
-                    <div class="back-to-articles">
+                    <div class="back-to-articles mb-5">
                         <a href="{{route('articles')}}" class="btn btn-secondary">Back To Articles</a>
                     </div>
                 </div>

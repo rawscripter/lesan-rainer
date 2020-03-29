@@ -44,9 +44,16 @@
                             <h3 class="art_name" style="font-size: 40px">{{$art->name}}</h3>
                             <h3>{{$art->size1}} | {{$art->size2}}</h3>
                             <h3>2019</h3>
-                            <p style="white-space: pre-line">
+                            <p class="show-text-as-white-space">
                                 {!! $art->description !!}
                             </p>
+
+                            @auth()
+                                <p class="show-text-as-white-space">
+                                    {!! $art->hidden_info !!}
+                                </p>
+
+                            @endauth
                         </div>
                         <div class="art_overview_btn">
                             <div class="row">

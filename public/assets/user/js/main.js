@@ -74,3 +74,28 @@ $(document).ready(function () {
         });
     })
 });
+
+$(document).ready(function () {
+
+    $("#popupLoginModal").submit(function (e) {
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: '/login',
+            type: "post",
+            data: $("#popupLoginModal").serialize(),
+            success: function (data) {
+                window.location = '/';
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Invalid Email or Password. Please try again.')
+            }
+        })
+        ;
+    })
+});
