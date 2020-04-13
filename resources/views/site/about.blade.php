@@ -1,5 +1,10 @@
 @extends('layouts.user.layout')
 @section('body')
+    <style>
+        .modal-dialog {
+            max-width: 1100px !important;
+        }
+    </style>
     <div class="main_content">
         <div class="row m-0 p-0">
             <div class="col-md-6 offset-md-3 col-lg-6 offset-lg-3">

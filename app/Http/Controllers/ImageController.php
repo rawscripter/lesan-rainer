@@ -32,4 +32,31 @@ class ImageController extends Controller
         $img->save($destinationPath . '/' . $imageName);
         return $imageName;
     }
+
+    public function uploadArtImages(Request $request, Art $art)
+    {
+        $photos = $request->file('file');
+
+        if (!is_array($photos)) {
+            $photos = [$photos];
+        }
+
+        for ($i = 0; $i < count($photos); $i++) {
+            $photo = $photos[$i];
+            $imageName = $this->uploadImage($photo);
+            $image = Image::create(
+                ['name' => $imageName]
+            );
+
+            ArtImage::create([
+                'art_id' => $art->id,
+                'image_id' => $image->id,
+            ]);
+        }
+
+        return Response::json([
+            'message' => 'Image saved Successfully'
+        ], 200);
+    }
+
 }

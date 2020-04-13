@@ -1,4 +1,10 @@
 @extends('layouts.admin.layout')
+
+@section('head')
+    <link rel="stylesheet" href="{{asset('assets/admin/vendors/summernote/dist/summernote-bs4.css')}}">
+@endsection
+
+
 @section('content')
 
     <style>
@@ -93,7 +99,7 @@
 
                         <div class="form-group">
                             {{Form::label('hidden_info', 'Hidden Information')}}
-                            {{Form::textarea('hidden_info', null,['class'=>'form-control'])}}
+                            {{Form::textarea('hidden_info', null,['class'=>'form-control','id'=>'summernote'])}}
                         </div>
 
                         <div class="row">
@@ -223,3 +229,28 @@
     </div>
 
 @endsection
+
+@section('footer')
+    <script src="{{asset('assets/admin/js/dragula.js')}}"></script>
+    <script src="{{asset('assets/admin/vendors/summernote/dist/summernote-bs4.min.js')}}"></script>
+    <script !src="">
+        /*Summernote editor*/
+        if ($("#summernote").length) {
+            $('#summernote').summernote({
+                height: 300,
+                tabsize: 2
+            });
+        }
+
+        Dropzone.autoDiscover = false;
+
+        var myDropzone = new Dropzone("#my-awesome-dropzone", {
+            maxFilesize: 500000,
+            timeout: 18000000,
+        });
+
+    </script>
+
+
+@endsection
+

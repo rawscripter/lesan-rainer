@@ -1,3 +1,15 @@
+<style>
+    .col-12.col-lg-7.m-auto.p-0 {
+        margin-top: 0px !important;
+    }
+
+    .art_desc p {
+        padding: 0px;
+        margin: 0px;
+    }
+
+
+</style>
 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -18,7 +30,6 @@
                         <div class="all_image">
                             <div class="row m-0 p-0">
                                 @if($art->relatedImages->count() > 0)
-
                                     <div class="column">
                                         <img class="mr-2" src="/images/thumb/{{$art->image}}"
                                              alt="Nature"
@@ -49,7 +60,7 @@
                             </p>
 
                             @auth()
-                                <p class="show-text-as-white-space">
+                                <p class="show-text-as-white-space hidden-info-section">
                                     {!! $art->hidden_info !!}
                                 </p>
 
@@ -88,5 +99,18 @@
         expandImg.src = imgs.dataset.img;
         imgText.innerHTML = imgs.dataset.img;
         expandImg.parentElement.style.display = "block";
+    }
+
+
+    var tables = document.getElementsByTagName('p');
+    // var tables = document.querySelector('.hidden-info-section');
+    for (var i = 0; i < tables.length; i++) {
+        var s = tables[i].innerHTML;
+        s = s.replace('available', '<span style="color:green">available</span>');
+        tables[i].innerHTML = s;
+
+        var s = tables[i].innerHTML;
+        s = s.replace('Available', '<span style="color:green">Available</span>');
+        tables[i].innerHTML = s;
     }
 </script>

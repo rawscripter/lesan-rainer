@@ -188,17 +188,21 @@
 <script src="{{asset('assets/admin/js/settings.js')}}"></script>
 <script src="{{asset('assets/admin/js/dashboard.js')}}"></script>
 <script src="{{asset('assets/admin/js/dropify.js')}}"></script>
+<script src="{{asset('assets/admin/js/select2.js')}}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 
+
 <script>
     $(document).ready(function () {
+
         $('select.select2').select2();
         $('table.dataTable').DataTable({
             "order": [[0, "desc"]]
         });
     });
+
 </script>
 @yield('footer')
 </body>

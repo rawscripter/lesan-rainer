@@ -35,6 +35,27 @@
         div#loginModal input:focus, div#loginModal input:visited {
             background: transparent !important;
         }
+
+        .user-signout-text {
+            display: none;
+        }
+
+        .sign-out-btn:hover .profile-user-name {
+            display: none;
+        }
+
+        .sign-out-btn:hover .user-signout-text {
+            display: inline-block;
+        }
+
+        a.btn.btn-default.sign-out-btn {
+            width: 250px !important;
+            text-align: right;
+        }
+
+        button.close {
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
@@ -90,8 +111,9 @@
                     @endguest
                     @auth()
                         <a href="/user/logout" style="color: #fff"
-                           class="btn btn-default">Welcome, {{auth()->user()->name}}
-                            !
+                           class="btn btn-default sign-out-btn">
+                            <span class="profile-user-name">Welcome, {{auth()->user()->name}}!</span>
+                            <span class="user-signout-text">Sign out!</span>
                             <img
                                 src="{{asset('assets/user/images/icon/Logout Icon.svg')}}" style="width: 13%;"
                                 alt=""></a>

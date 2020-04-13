@@ -49,9 +49,16 @@ class SiteController extends Controller
     public function showCollection($collection)
     {
         $collection = Collection::whereName($collection)->first();
+
         $page = 'collection';
         $collections = Collection::orderBy('created_at', 'asc')->get();
-        $arts = Art::where('collection_id', $collection->id)->whereArchive(0)->paginate(8);
+
+        if (strtolower($collection->name) == 'all') {
+            $arts = Art::whereArchive(0)->paginate(8);
+        } else {
+            $arts = Art::where('collection_id', $collection->id)->whereArchive(0)->paginate(8);
+        }
+
         return view('site.collection', compact('collections', 'page', 'collection', 'arts'));
     }
 

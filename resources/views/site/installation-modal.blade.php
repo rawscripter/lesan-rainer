@@ -13,10 +13,15 @@
         padding: 0;
         margin: 0;
     }
+
+    .modal-dialog {
+        max-width: 1100px;
+        margin: 1.75rem auto;
+    }
 </style>
 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -67,16 +72,18 @@
                             <h3 class="show-text-as-white-space">{{$installation->comment}}</h3>
                         </div>
                         <br><br>
-                        <div class="art_overview_btn">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12">
-                                    <a href="#"
-                                       class="btn btn-outline-light rounded-0 btn-block mt-3">
-                                        VIEW SCULPTURE
-                                    </a>
+                        @if(!empty($installation->art_id))
+                            <div class="art_overview_btn">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12">
+                                        <a href="#"
+                                           class="btn btn-outline-light rounded-0 btn-block mt-3">
+                                            VIEW SCULPTURE
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

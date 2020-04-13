@@ -26,6 +26,7 @@
                     <div class="col-md-7 col-lg-7">
                         <div class="contact_form">
                             <form action='{{route('contact.mail')}}' method="POST" id="contactForm">
+                                {{csrf_field()}}
                                 <div class=""><input type="text" required placeholder="Name" name="name"></div>
                                 <div class=""><input type="text" required placeholder="Email" name="email"></div>
                                 <div class=""><input type="text" required placeholder="Phone" name="phone"></div>
@@ -42,7 +43,7 @@
                     <div class="col-md-4 col-lg-4 ">
                         <div class="contact_mail">
                             <img style="width: 20%;" src="{{asset('assets/user/images/icon/Email Icon.svg')}}" alt="">
-                            <span><a target="_blank" href="//mail.google.com">Rainerlagemann@me.com</a></span>
+                            <span><a target="_blank" href="mailto:rainerlagemann@me.com">Rainerlagemann@me.com</a></span>
                         </div>
                         <div class="contact_mail subscribe_form">
                             <p>Feel free to sign up for our newsletter!</p>
@@ -51,7 +52,8 @@
                                       target="vr_optin_popup"
                                       onsubmit="window.open( 'http://www.verticalresponse.com', 'vr_optin_popup', 'scrollbars=yes,width=600,height=450' ); return true;">
                                     <div>
-                                        <input type="submit" value="Sign Up" class="btn-light"  style="border: 1px solid #999; padding: 5px;"/><br/>
+                                        <input type="submit" value="Sign Up" class="btn-light"
+                                               style="border: 1px solid #999; padding: 5px;"/><br/>
                                         <br/>
                                     </div>
                                 </form>

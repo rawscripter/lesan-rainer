@@ -18,10 +18,14 @@
     h3.ex-des {
         line-height: 29px;
         font-weight: normal;
-        text-align: justify;
+        text-align: left;
         white-space: pre-wrap;
         font-size: 15px;
     }
+
+    .modal-dialog {
+        max-width: 900px !important;
+     }
 </style>
 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
      aria-hidden="true">

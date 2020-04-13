@@ -5,7 +5,7 @@
             <div class="slider_area">
                 <div class="row m-0 p-0">
                     <div class="col-md-10 col-lg-6 m-auto">
-                        <div id="carouselExampleFade" data-interval="1500" class="carousel slide carousel-fade"
+                        <div id="carouselExampleFade" data-interval="5000" class="carousel slide carousel-fade"
                              data-ride="carousel">
                             <div class="carousel-inner">
                                 @php

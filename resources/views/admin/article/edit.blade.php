@@ -1,5 +1,7 @@
 @extends('layouts.admin.layout')
-
+@section('head')
+    <link rel="stylesheet" href="{{asset('assets/admin/vendors/summernote/dist/summernote-bs4.css')}}">
+@endsection
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
@@ -51,7 +53,7 @@
 
                         <div class="form-group">
                             {{Form::label('details', 'Details')}}
-                            {{Form::textarea('details', null,['class'=>'form-control','id'=>'summernoteExample'])}}
+                            {{Form::textarea('details', null,['class'=>'form-control','id'=>'summernote'])}}
                         </div>
 
 
@@ -80,4 +82,17 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <script src="{{asset('assets/admin/vendors/summernote/dist/summernote-bs4.min.js')}}"></script>
+    <script !src="">
+        /*Summernote editor*/
+        if ($("#summernote").length) {
+            $('#summernote').summernote({
+                height: 300,
+                tabsize: 2
+            });
+        }
+    </script>
 @endsection
