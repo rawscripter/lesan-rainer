@@ -68,7 +68,9 @@
                         <div class="art_desc">
                             <h3 class="art_name">{{$installation->name}}</h3>
                             <h3>{{$installation->location}}</h3>
-                            <h3 class="art_name">{{$installation->art->name}}</h3>
+                            @if(!empty($installation->art_id))
+                                <h3 class="art_name">{{$installation->art->name}}</h3>
+                            @endif
                             <h3 class="show-text-as-white-space">{{$installation->comment}}</h3>
                         </div>
                         <br><br>

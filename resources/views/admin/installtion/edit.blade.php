@@ -70,7 +70,7 @@
 
                         <div class="form-group">
                             <div class="form-group">
-                                {{Form::label('type', 'Select a Collection')}}
+                                {{Form::label('type', 'Select a Category')}}
                                 {{Form::select('type', ['Public'=>'Public','Private'=>'Private'] , $installation->type, ['class'=>'form-control select2','placeholder' => 'Select Type','required'])}}
                             </div>
                         </div>

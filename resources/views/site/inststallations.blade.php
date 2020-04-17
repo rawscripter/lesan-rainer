@@ -10,18 +10,18 @@
 			</div>
 		</div>
 		<!-- start demo modal -->
-		
-		
+
+
 		<!-- end of modal -->
 		<div class="colection_content">
 			<div class="container">
 				<div class="installation-area-btn text-center">
-					<a href="{{route('site.installations')}}" class="btn btn-light mt-3  rounded-0" style="min-width: 150px;">SHOW
+					<a href="{{route('site.installations')}}" class="btn {{ !isset($_GET['filter']) ? 'btn-light' : 'btn-outline-light' }} mt-3  rounded-0" style="min-width: 150px;">SHOW
 						ALL</a>
-					<a href="?filter=Private" class="btn btn-outline-light mt-3  rounded-0" style="min-width: 150px;">PRIVATE</a>
-					<a href="?filter=Public" class="btn btn-outline-light mt-3  rounded-0" style="min-width: 150px;">PUBLIC</a>
+					<a href="?filter=Private" class="btn  mt-3 {{ isset($_GET['filter']) && $_GET['filter'] == 'Private' ? 'btn-light' : 'btn-outline-light' }} rounded-0" style="min-width: 150px;">PRIVATE</a>
+					<a href="?filter=Public" class="btn  mt-3 {{ isset($_GET['filter']) && $_GET['filter'] == 'Public' ? 'btn-light' : 'btn-outline-light' }}  rounded-0" style="min-width: 150px;">PUBLIC</a>
 				</div>
-				
+
 				<div class="infinite-scroll">
 					<div class="row m-0 p-0">
 						@foreach($installations as $ins)
@@ -40,17 +40,17 @@
 								</div>
 							</div>
 						@endforeach
-						
+
 						{{ $installations->appends($_GET)->links() }}
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<div id="callBackModal">
-	
+
 	</div>
 @endsection
 

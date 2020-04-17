@@ -90,6 +90,13 @@
                                     {{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-12 m-auto">
+                                <div class="form-group">
+                                    {{Form::label('mold_name', 'Mold Name')}}
+                                    {{Form::text('mold_name', null,['class'=>'form-control'])}}
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

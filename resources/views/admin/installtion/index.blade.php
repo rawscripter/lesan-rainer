@@ -16,7 +16,7 @@
 		</div>
 		<div class="card">
 			<div class="card-body">
-				
+
 				@if(Session::has('message'))
 					<div class="row">
 						<div class="col-md-12 m-auto">
@@ -24,8 +24,8 @@
 						</div>
 					</div>
 				@endif
-				
-				
+
+
 				<div class="row">
 					<div class="col-12">
 						<div class="create-btn text-right">
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 					<div class="col-12 mt-5">
-						
+
 						<div id="order-listing_wrapper"
 						     class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
 							<table class="table  no-footer" role="grid"
@@ -58,7 +58,7 @@
 										<td>{{$i++}}</td>
 										<td>{{$ins->name}}</td>
 										<td>{{$ins->location}}</td>
-										<td>{{$ins->art->name}}</td>
+										<td>{{optional($ins->art)->name}}</td>
 										<td>
 											<a href="{{route('installations.edit',$ins->id)}}"
 											   class="btn btn-primary">
@@ -90,7 +90,7 @@
 @section('footer')
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	
+
 	<script>
       $(document).ready(function () {
           $('table').DataTable({

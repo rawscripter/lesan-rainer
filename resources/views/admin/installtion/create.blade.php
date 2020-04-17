@@ -69,7 +69,7 @@
 
                         <div class="form-group">
                             <div class="form-group">
-                                {{Form::label('type', 'Select a Collection')}}
+                                {{Form::label('type', 'Select a Category')}}
                                 {{Form::select('type', ['Public'=>'Public','Private'=>'Private'] , 'Public', ['class'=>'form-control select2','placeholder' => 'Select Type','required'])}}
                             </div>
                         </div>
@@ -82,12 +82,12 @@
 
                         <div class="form-group">
                             {{Form::label('image', 'Second Image')}}
-                            {{Form::file('image_2',['class'=>'dropify','required'])}}
+                            {{Form::file('image_2',['class'=>'dropify'])}}
                         </div>
 
                         <div class="form-group">
                             {{Form::label('image', 'Third Image')}}
-                            {{Form::file('image_3',['class'=>'dropify','required'])}}
+                            {{Form::file('image_3',['class'=>'dropify'])}}
                         </div>
 
 

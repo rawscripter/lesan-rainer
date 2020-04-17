@@ -48,6 +48,7 @@ class ArtController extends Controller
 
         $data = $this->validateArtReq($request);
         $data['hidden_info'] = $request->hidden_info;
+        $data['mold_name'] = $request->mold_name;;
 
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadArtImage($request);
@@ -101,6 +102,9 @@ class ArtController extends Controller
     {
         $data = $this->validateArtReq($request);
         $data['hidden_info'] = $request->hidden_info;;
+        $data['mold_name'] = $request->mold_name;;
+
+
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadArtImage($request);
             $this->UnlinkImage('images/arts/', $art->image);

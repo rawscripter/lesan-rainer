@@ -49,6 +49,9 @@
         margin-top: 50px;
     }
 
+    .center {
+        text-align: center;
+    }
 
 </style>
 <body>
@@ -58,12 +61,12 @@
 <div class="header" style="position:relative; top:10; width:50%; margin: 0 auto ">
     <img src="{{ public_path("images/arts/".$art->image) }}" style="max-width: 100%">
 </div>
-<div class="content  midtop">
+<div class="content center  midtop">
     <h3>{{$art->name}}</h3>
     <p>{{$art->size1}} | {{$art->size2}}</p>
     <p style="font-size: 20px">{{$art->year}}</p>
     <br>
-    <p style="text-align: left;white-space:pre-line;">{!! $art->description !!}</p>
+    <p style="text-align: center;white-space:pre-line;">{!! $art->description !!}</p>
 </div>
 <div class="content" style="position:absolute; bottom:10px;  margin: 0 auto; text-align: center">
     <p>www.rainerlagemann.com</p>

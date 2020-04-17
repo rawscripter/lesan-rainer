@@ -52,15 +52,14 @@
                     </div>
                     <div class="col-lg-5 col-md-12 ml-auto">
                         <div class="art_desc">
-                            <h3 class="art_name" style="font-size: 40px">{{$art->name}}</h3>
-                            <h3>{{$art->size1}} | {{$art->size2}}</h3>
-                            <h3>2019</h3>
-                            <p class="show-text-as-white-space">
+                            <h3 class="art_name" style="font-size: 60px">{{$art->name}}</h3>
+                            <h3 style="font-size: 16px">{{$art->year}} | {{$art->mold_name}}</h3>
+                            <p class="show-text-as-white-space" style="font-size: 16px">
                                 {!! $art->description !!}
                             </p>
-
+                            <h3 style="font-size: 16px">{{$art->size1}} | {{$art->size2}}</h3>
                             @auth()
-                                <p class="show-text-as-white-space hidden-info-section">
+                                <p class="show-text-as-white-space hidden-info-section" style="font-size: 16px">
                                     {!! $art->hidden_info !!}
                                 </p>
 

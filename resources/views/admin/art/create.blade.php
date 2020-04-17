@@ -72,12 +72,20 @@
                                 </div>
                             </div>
 
+
                             <div class="col-12 col-md-6 m-auto">
                                 <div class="form-group">
                                     {{Form::label('collection_id', 'Select a Collection')}}
-                                    {{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures','multiple'=>'multiple'])}}
+                                    {{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
                                 </div>
                             </div>
+                            <div class="col-12 col-md-12 m-auto">
+                                <div class="form-group">
+                                    {{Form::label('mold_name', 'Mold Name')}}
+                                    {{Form::text('mold_name', null,['class'=>'form-control'])}}
+                                </div>
+                            </div>
+
                         </div>
 
 
@@ -90,22 +98,39 @@ Wall mounted / Free standing / Hanging
 Edition of 9
 
 2 Artist Proofs';
-                                $defaultHiddenInfo = '<p>Retail US$
+                                $defaultHiddenInfo = 'Retail US$ Edition
 
-Edition</p><p><br></p><p> </p><p>1 of 9: Available</p><p><br></p><p>Edition 2 of 9: Available
-</p><p>Edition 3 of 9: Available
-</p><p>Edition 4 of 9: Available
-</p><p>Edition 5 of 9: Available
-</p><p>Edition 6 of 9: Available
-</p><p>Edition 7 of 9: Available
-</p><p>Edition 8 of 9: Available
-</p><p>Edition 9 of 9: Available
-</p><p>
+
+
+1 of 9: Available
+
+
+
+Edition 2 of 9: Available
+
+Edition 3 of 9: Available
+
+Edition 4 of 9: Available
+
+Edition 5 of 9: Available
+
+Edition 6 of 9: Available
+
+Edition 7 of 9: Available
+
+Edition 8 of 9: Available
+
+Edition 9 of 9: Available
+
 AP 1 of 2: Available
-</p><p>AP 2 of 2: Available</p><p><br></p><p>
-</p><p>
+
+AP 2 of 2: Available
+
+
+
 Crate size:
-</p><p>Crate weight:</p>';
+
+Crate weight:';
                         @endphp
                         <div class="form-group">
                             {{Form::label('description', 'Art Description')}}
