@@ -9,10 +9,43 @@ use App\UserLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
+use League\Flysystem\Filesystem;
+use Spatie\Dropbox\Client;
+use Spatie\FlysystemDropbox\DropboxAdapter;
 use Webpatser\Uuid\Uuid;
 
 class ImageController extends Controller
 {
+
+    public static function uploadArtImageToDropbox($image)
+    {
+        $dropboxClient = new Client(env('DROPBOX_TOKEN'));
+        $adapter = new DropboxAdapter($dropboxClient);
+        $filesystem = new Filesystem($adapter);
+        $imageName = Uuid::generate()->string . '.' . $image->getClientOriginalExtension();
+        $localImagePath = $image->getRealPath();
+
+        $filesystem->put($imageName, file_get_contents($localImagePath), []);
+
+        return $dropboxClient->createSharedLinkWithSettings($imageName);
+
+
+    }
+
+    public static function cropImageFromDropbox($name,$remoteUrl)
+    {
+        $image = $img = \Intervention\Image\Facades\Image::make($remoteUrl);
+        //image for thumb
+        $img->backup();
+        $destinationPath = public_path('/images/thumb');
+        $img->resize(200, 200)->save($destinationPath . '/' .$name);
+        $img->reset();
+        //image for for slider
+        $destinationPath = public_path('/images/feature');
+        $img->resize(800, 800)->save($destinationPath . '/' . $name);
+
+    }
+
     public static function uploadImage($image)
     {
         $imageName = Uuid::generate()->string . '.' . $image->getClientOriginalExtension();

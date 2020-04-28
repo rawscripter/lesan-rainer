@@ -58,7 +58,9 @@
                                 {!! $art->description !!}
                             </p>
                             <h3 style="font-size: 16px">{{$art->size1}} | {{$art->size2}}</h3>
+
                             @auth()
+                                <br>
                                 <p class="show-text-as-white-space hidden-info-section" style="font-size: 16px">
                                     {!! $art->hidden_info !!}
                                 </p>
@@ -68,10 +70,22 @@
                         <div class="art_overview_btn">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
-                                    <a href="{{route('art.image.download',$art->id)}}"
-                                       class="btn btn-outline-light rounded-0 btn-block mt-3">
-                                        DOWNLOAD HIGH RESOLUTION IMAGE
-                                    </a>
+
+
+                                    @if(!empty($art->dropbox_url))
+                                        @php
+                                            $image = str_replace('?dl=0','?dl=1',$art->dropbox_url);
+                                        @endphp
+                                        <a href="{{$image}}"
+                                           class="btn btn-outline-light rounded-0 btn-block mt-3">
+                                            DOWNLOAD HIGH RESOLUTION IMAGE
+                                        </a>
+                                    @else
+                                        <a href="{{route('art.image.download',$art->id)}}"
+                                           class="btn btn-outline-light rounded-0 btn-block mt-3">
+                                            DOWNLOAD HIGH RESOLUTION IMAGE
+                                        </a>
+                                    @endif
                                 </div>
 
 

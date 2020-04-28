@@ -98,39 +98,22 @@ Wall mounted / Free standing / Hanging
 Edition of 9
 
 2 Artist Proofs';
-                                $defaultHiddenInfo = 'Retail US$ Edition
+                                $defaultHiddenInfo = '<p>Retail US$
 
-
-
-1 of 9: Available
-
-
-
-Edition 2 of 9: Available
-
-Edition 3 of 9: Available
-
-Edition 4 of 9: Available
-
-Edition 5 of 9: Available
-
-Edition 6 of 9: Available
-
-Edition 7 of 9: Available
-
-Edition 8 of 9: Available
-
-Edition 9 of 9: Available
-
+Edition</p><p><br></p><p> </p><p>1 of 9: Available</p><p><br></p><p>Edition 2 of 9: Available
+</p><p>Edition 3 of 9: Available
+</p><p>Edition 4 of 9: Available
+</p><p>Edition 5 of 9: Available
+</p><p>Edition 6 of 9: Available
+</p><p>Edition 7 of 9: Available
+</p><p>Edition 8 of 9: Available
+</p><p>Edition 9 of 9: Available
+</p><p>
 AP 1 of 2: Available
-
-AP 2 of 2: Available
-
-
-
+</p><p>AP 2 of 2: Available</p><p><br></p><p>
+</p><p>
 Crate size:
-
-Crate weight:';
+</p><p>Crate weight:</p>';
                         @endphp
                         <div class="form-group">
                             {{Form::label('description', 'Art Description')}}
@@ -143,10 +126,10 @@ Crate weight:';
                             {{Form::textarea('hidden_info', $defaultHiddenInfo,['class'=>'form-control','id'=>'summernote'])}}
                         </div>
 
-                        <div class="form-group">
-                            {{Form::label('image', 'Feature Image')}}
-                            {{Form::file('image',['class'=>'dropify','required'])}}
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            {{Form::label('image', 'Feature Image')}}--}}
+{{--                            {{Form::file('image',['class'=>'dropify','required'])}}--}}
+{{--                        </div>--}}
                         <br>
                         <div class="form-group">
                             <div class="form-check">
@@ -158,7 +141,7 @@ Crate weight:';
                         </div>
                         <br>
                         <div class="form-group">
-                            {{Form::submit('Add Installation',['class'=>'btn btn-block btn-primary'])}}
+                            {{Form::submit('Add Artwork',['class'=>'btn btn-block btn-primary'])}}
                         </div>
                         {!! Form::close() !!}
                     </div>

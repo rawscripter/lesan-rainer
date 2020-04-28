@@ -44,5 +44,26 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('/test', function () {
+    $name = 'hello.png';
+    $image = 'https://www.dropbox.com/s/d31yx0fej59v1nx/7d4c4af0-897b-11ea-b2e4-c9e8b225dc5e.jpg?dl=1';
+    try {
+        \App\Http\Controllers\ImageController::cropImageFromDropbox($name, $image);
+    } catch (Exception $exception) {
+        return $exception->getMessage();
+    }
+});
+
+
+//for clear site cache
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:cache');
+    Artisan::call('queue:work --once');
+    return 'cache cleared';
+});
+
 
 

@@ -51,7 +51,7 @@ class SiteController extends Controller
         $collection = Collection::whereName($collection)->first();
 
         $page = 'collection';
-        $collections = Collection::orderBy('created_at', 'asc')->get();
+        $collections = Collection::orderBy('created_at', 'desc')->get();
 
         if (strtolower($collection->name) == 'all') {
             $arts = Art::whereArchive(0)->paginate(8);

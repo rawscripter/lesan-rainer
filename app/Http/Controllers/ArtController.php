@@ -6,6 +6,7 @@ use App\Art;
 use App\ArtImage;
 use App\Collection;
 use App\Image;
+use App\Jobs\ImageCropJob;
 use App\UserLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,7 @@ class ArtController extends Controller
      */
     public function create()
     {
-        $collections = Collection::pluck('name', 'id')->all();
+        $collections = Collection::where('name', '!=', 'ALL')->pluck('name', 'id')->all();
         $availableUploadedImages = \App\Image::orderBy('created_at', 'desc')->get();
         return view('admin.art.create', compact('collections', 'availableUploadedImages'));
     }
@@ -51,7 +52,14 @@ class ArtController extends Controller
         $data['mold_name'] = $request->mold_name;;
 
         if ($request->hasFile('image')) {
-            $data['image'] = $this->uploadArtImage($request);
+            $image = $request->file('image');
+            $dbImage = ImageController::uploadArtImageToDropbox($image);
+            $data['image'] = $dbImage['name'];
+
+            $imageUrl = str_replace('?dl=0', '?dl=1', $dbImage['url']);
+            $data['dropbox_url'] = $imageUrl;
+
+            ImageCropJob::dispatch($dbImage['name'], $imageUrl);
         }
         if (isset($request->archive)) {
             $data['archive'] = 1;
@@ -84,7 +92,7 @@ class ArtController extends Controller
      */
     public function edit(Art $art)
     {
-        $collections = Collection::pluck('name', 'id')->all();
+        $collections = Collection::where('name', '!=', 'ALL')->pluck('name', 'id')->all();
         $uploadedImages = \App\Image::orderBy('created_at', 'desc')->get();
         $artImages = $art->relatedImages;
         $availableUploadedImages = $uploadedImages->diff($artImages);
@@ -104,15 +112,20 @@ class ArtController extends Controller
         $data['hidden_info'] = $request->hidden_info;;
         $data['mold_name'] = $request->mold_name;;
 
+        $name = 'b793b180-8966-11ea-ac82-6f910ce4c6f5.png';
 
         if ($request->hasFile('image')) {
-            $data['image'] = $this->uploadArtImage($request);
-            $this->UnlinkImage('images/arts/', $art->image);
-            $this->UnlinkImage('images/feature/', $art->image);
-            $this->UnlinkImage('images/thumb/', $art->image);
+            $image = $request->file('image');
+            $dbImage = ImageController::uploadArtImageToDropbox($image);
+            $data['image'] = $dbImage['name'];
+            $imageUrl = str_replace('?dl=0', '?dl=1', $dbImage['url']);
+            $data['dropbox_url'] = $imageUrl;
+            ImageCropJob::dispatch($dbImage['name'], $imageUrl);
         } else {
             $data['image'] = $art->image;
         }
+
+
         if (!empty($request->removeImage)) {
             foreach ($request->removeImage as $img) {
                 $images = ArtImage::where('image_id', $img)->where('art_id', $art->id)->get();
@@ -151,26 +164,6 @@ class ArtController extends Controller
         return redirect()->back()->with('message', 'Art deleted from Database');
     }
 
-    private function uploadArtImage($request)
-    {
-        $image = $request->file('image');
-        $imageName = Uuid::generate()->string . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('/images/thumb');
-        $img = \Intervention\Image\Facades\Image::make($image->getRealPath());
-        // backup status
-        $img->backup();
-        //image for thumb
-        $img->resize(200, 200)->save($destinationPath . '/' . $imageName);
-        $img->reset();
-        //image for for slider
-        $destinationPath = public_path('/images/feature');
-        $img->resize(800, 800)->save($destinationPath . '/' . $imageName);
-        $img->reset();
-        //uploading original image
-        $destinationPath = public_path('/images/arts');
-        $img->save($destinationPath . '/' . $imageName);
-        return $imageName;
-    }
 
     private function UnlinkImage($filepath, $fileName)
     {
@@ -201,5 +194,10 @@ class ArtController extends Controller
             'title' => $title,
             'body' => $body
         ]);
+    }
+
+    public function test()
+    {
+
     }
 }

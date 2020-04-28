@@ -180,7 +180,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            {{Form::submit('Update Installation',['class'=>'btn btn-block btn-primary'])}}
+                            {{Form::submit('Update Artwork',['class'=>'btn btn-block btn-primary'])}}
                         </div>
                         {!! Form::close() !!}
                     </div>
