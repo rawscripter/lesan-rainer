@@ -19,6 +19,12 @@
             padding: 10px;
         }
 
+        div#dragula-event-right-collection, div#dragula-event-left-collection {
+            min-height: 200px;
+            background: #f1f1f1;
+            padding: 10px;
+        }
+
         div#dragula-event-right div, div#dragula-event-left div {
             cursor: pointer;
         }
@@ -87,7 +93,60 @@
                             <div class="col-12 col-md-6 m-auto">
                                 <div class="form-group">
                                     {{Form::label('collection_id', 'Select a Collection')}}
-                                    {{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
+                                    {{Form::select('collection[]', $availableCollections, null, ['class'=>'form-control select2','multiple'=>true])}}
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-md-12 m-auto">
+                                <div class="form-group">
+                                    <div class="col-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Drag and Drop Collections</h4>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h6 class="card-title">Attached Collection</h6>
+                                                        <div id="dragula-event-left-collection" class="py-2">
+                                                            @if(!empty($art->collections))
+                                                                @foreach($art->collections as $activeCollection)
+                                                                    <div class="card rounded border mb-2">
+                                                                        <div class="card-body p-3">
+                                                                            <div class="media">
+                                                                                <i class="fa fa-check icon-sm align-self-center mr-3 text-success"></i>
+                                                                                <div class="media-body">
+                                                                                    {{$activeCollection->name}}
+                                                                                    <input class="related_collection active"
+                                                                                           type="hidden"
+                                                                                           value="{{$activeCollection->id}}"
+                                                                                           name="removeCollection[]">
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endforeach
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h6 class="card-title">Remove Collection</h6>
+                                                        <div id="dragula-event-right-collection" class="py-2 parentDiv">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-md-12 m-auto">
+                                <div class="form-group">
+                                    {{Form::label('video_url', 'Youtube Video Url')}}
+                                    {{Form::text('video_url', null,['class'=>'form-control'])}}
                                 </div>
                             </div>
 

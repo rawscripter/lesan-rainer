@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Art;
+use App\ArtCollection;
 use App\ArtImage;
 use App\Collection;
 use App\Image;
@@ -46,10 +47,10 @@ class ArtController extends Controller
      */
     public function store(Request $request)
     {
-
         $data = $this->validateArtReq($request);
         $data['hidden_info'] = $request->hidden_info;
-        $data['mold_name'] = $request->mold_name;;
+        $data['mold_name'] = $request->mold_name;
+        $data['video_url'] = $request->video_url;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -65,6 +66,17 @@ class ArtController extends Controller
             $data['archive'] = 1;
         }
         $art = Art::create($data);
+
+        if (!empty($request->collection)) {
+            foreach ($request->collection as $collection) {
+                ArtCollection::create(
+                    [
+                        'collection_id' => $collection,
+                        'art_id' => $art->id,
+                    ]
+                );
+            }
+        }
         if ($art) {
             $title = 'Added';
             $body = 'Added a Art: ' . $art->name;
@@ -92,11 +104,13 @@ class ArtController extends Controller
      */
     public function edit(Art $art)
     {
-        $collections = Collection::where('name', '!=', 'ALL')->pluck('name', 'id')->all();
+        $collections = Collection::where('name', '!=', 'ALL')->get();
         $uploadedImages = \App\Image::orderBy('created_at', 'desc')->get();
         $artImages = $art->relatedImages;
         $availableUploadedImages = $uploadedImages->diff($artImages);
-        return view('admin.art.edit', compact('collections', 'art', 'availableUploadedImages'));
+        $availableCollections = $collections->diff($art->collections);
+        $availableCollections = $availableCollections->pluck('name', 'id');
+        return view('admin.art.edit', compact('collections', 'art', 'availableUploadedImages', 'availableCollections'));
     }
 
     /**
@@ -109,8 +123,9 @@ class ArtController extends Controller
     public function update(Request $request, Art $art)
     {
         $data = $this->validateArtReq($request);
-        $data['hidden_info'] = $request->hidden_info;;
-        $data['mold_name'] = $request->mold_name;;
+        $data['hidden_info'] = $request->hidden_info;
+        $data['mold_name'] = $request->mold_name;
+        $data['video_url'] = $request->video_url;
 
         $name = 'b793b180-8966-11ea-ac82-6f910ce4c6f5.png';
 
@@ -123,6 +138,23 @@ class ArtController extends Controller
             ImageCropJob::dispatch($dbImage['name'], $imageUrl);
         } else {
             $data['image'] = $art->image;
+        }
+
+        if (!empty($request->collection)) {
+            foreach ($request->collection as $collection) {
+                ArtCollection::create(
+                    [
+                        'collection_id' => $collection,
+                        'art_id' => $art->id,
+                    ]
+                );
+            }
+        }
+
+        if (!empty($request->removeCollection)) {
+            foreach ($request->removeCollection as $collection) {
+                $collections = ArtCollection::where('art_id', $art->id)->where('collection_id', $collection)->delete();
+            }
         }
 
 
@@ -182,7 +214,6 @@ class ArtController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg',
             'description' => 'required',
             'year' => 'required',
-            'collection_id' => 'required',
         ]);
     }
 

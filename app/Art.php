@@ -31,4 +31,8 @@ class Art extends Model
         return $this->belongsToMany(Image::class, 'art_images')->withPivot('id')->take(7);
     }
 
+    public function collections()
+    {
+        return $this->belongsToMany(Collection::class, 'art_collections');
+    }
 }

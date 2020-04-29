@@ -75,10 +75,19 @@
 
                             <div class="col-12 col-md-6 m-auto">
                                 <div class="form-group">
-                                    {{Form::label('collection_id', 'Select a Collection')}}
-                                    {{Form::select('collection_id', $collections, null, ['class'=>'form-control select2','placeholder' => 'Select a Sculptures'])}}
+                                    {{Form::label('collection', 'Select a Collection')}}
+                                    {{Form::select('collection[]', $collections, null, ['class'=>'form-control select2','multiple'=>true])}}
                                 </div>
                             </div>
+
+                            <div class="col-12 col-md-12 m-auto">
+                                <div class="form-group">
+                                    {{Form::label('video_url', 'Youtube Video Url')}}
+                                    {{Form::text('video_url', null,['class'=>'form-control'])}}
+                                </div>
+                            </div>
+
+
                             <div class="col-12 col-md-12 m-auto">
                                 <div class="form-group">
                                     {{Form::label('mold_name', 'Mold Name')}}
@@ -126,10 +135,10 @@ Crate size:
                             {{Form::textarea('hidden_info', $defaultHiddenInfo,['class'=>'form-control','id'=>'summernote'])}}
                         </div>
 
-{{--                        <div class="form-group">--}}
-{{--                            {{Form::label('image', 'Feature Image')}}--}}
-{{--                            {{Form::file('image',['class'=>'dropify','required'])}}--}}
-{{--                        </div>--}}
+                        {{--                        <div class="form-group">--}}
+                        {{--                            {{Form::label('image', 'Feature Image')}}--}}
+                        {{--                            {{Form::file('image',['class'=>'dropify','required'])}}--}}
+                        {{--                        </div>--}}
                         <br>
                         <div class="form-group">
                             <div class="form-check">

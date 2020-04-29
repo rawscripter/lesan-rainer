@@ -69,9 +69,16 @@
                         </div>
                         <div class="art_overview_btn">
                             <div class="row">
+                                @if(!empty($art->video_url))
+                                    <div class="col-md-12 col-lg-12">
+                                        <a href="{{$art->video_url}}"
+                                           target="_blank"
+                                           class="btn btn-outline-light rounded-0 btn-block mt-3">
+                                            WATCH VIDEO
+                                        </a>
+                                    </div>
+                                @endif
                                 <div class="col-md-12 col-lg-12">
-
-
                                     @if(!empty($art->dropbox_url))
                                         @php
                                             $image = str_replace('?dl=0','?dl=1',$art->dropbox_url);
