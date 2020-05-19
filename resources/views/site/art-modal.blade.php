@@ -23,18 +23,31 @@
                 <div class="row m-0 p-0">
                     <div class="col-12 col-lg-7 m-auto p-0">
                         <div class="image_overview">
-                            <!-- <img width="100%" class="img-thumbnail" src="assets/images/collcetion/gallery-2-500x500 - Copy.jpg" alt="image"> -->
+                            @if($art->isItHasFeatureImage())
+                                <img id="expandedImg" src="/images/feature/{{$art->image}}" style="width:100%">
+                            @else
+                                <img id="expandedImg" src="{{$art->dropbox_url}}" style="width:100%">
+                            @endif
 
-                            <img id="expandedImg" src="/images/feature/{{$art->image}}" style="width:100%">
+
                         </div>
                         <div class="all_image">
                             <div class="row m-0 p-0">
                                 @if($art->relatedImages->count() > 0)
                                     <div class="column">
-                                        <img class="mr-2" src="/images/thumb/{{$art->image}}"
-                                             alt="Nature"
-                                             data-img="/images/feature/{{$art->image}}"
-                                             style="max-width: 100px;cursor: pointer" onclick="myFunction(this);">
+
+                                        @if($art->isItHasFeatureImage())
+                                            <img class="mr-2" src="/images/thumb/{{$art->image}}"
+                                                 alt="Nature"
+                                                 data-img="/images/feature/{{$art->image}}"
+                                                 style="max-width: 100px;cursor: pointer" onclick="myFunction(this);">
+                                        @else
+                                            <img class="mr-2" src="{{$art->dropbox_url}}"
+                                                 alt="Nature"
+                                                 data-img="{{$art->$art->dropbox_url}}"
+                                                 style="max-width: 100px;cursor: pointer" onclick="myFunction(this);">
+                                        @endif
+
                                     </div>
                                 @endif
 
@@ -84,11 +97,13 @@
                                             $image = str_replace('?dl=0','?dl=1',$art->dropbox_url);
                                         @endphp
                                         <a href="{{$image}}"
+                                           target="_blank"
                                            class="btn btn-outline-light rounded-0 btn-block mt-3">
                                             DOWNLOAD HIGH RESOLUTION IMAGE
                                         </a>
                                     @else
                                         <a href="{{route('art.image.download',$art->id)}}"
+                                           target="_blank"
                                            class="btn btn-outline-light rounded-0 btn-block mt-3">
                                             DOWNLOAD HIGH RESOLUTION IMAGE
                                         </a>

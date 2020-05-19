@@ -14,8 +14,13 @@
                                 @foreach($arts as $art)
                                     <div class="carousel-item callArtDetailsModal {{$i < 1 ? 'active' : ''}}"
                                          data-art="{{$art->id}}">
-                                        <img src="/images/feature/{{$art->image}}"
-                                             alt="slider-image-1">
+                                        @if($art->isItHasFeatureImage())
+                                            <img src="/images/feature/{{$art->image}}"
+                                                 alt="slider-image-1">
+                                        @else
+                                            <img src="{{$art->dropbox_url}}"
+                                                 alt="slider-image-1">
+                                        @endif
                                     </div>
                                     @php
                                         $i++;

@@ -51,7 +51,7 @@
                                 @endphp
                                 @foreach($users as $user)
                                     <tr>
-                                        <td>{{$i}}</td>
+                                        <td>{{$i--}}</td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                         <td>{{$user->created_at->format('d M Y')}}</td>

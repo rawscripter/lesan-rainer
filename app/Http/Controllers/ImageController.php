@@ -17,12 +17,12 @@ use Webpatser\Uuid\Uuid;
 class ImageController extends Controller
 {
 
-    public static function uploadArtImageToDropbox($image)
+    public static function uploadArtImageToDropbox($artName, $image)
     {
-        $dropboxClient = new Client(env('DROPBOX_TOKEN'));
+        $dropboxClient = new Client('E3t4lWz1AIAAAAAAAAACG_nYzxTovatEutZbjFAF7uwyjHckQz6sBh98wLBzcnUu');
         $adapter = new DropboxAdapter($dropboxClient);
         $filesystem = new Filesystem($adapter);
-        $imageName = Uuid::generate()->string . '.' . $image->getClientOriginalExtension();
+        $imageName = $artName . '.' . $image->getClientOriginalExtension();
         $localImagePath = $image->getRealPath();
 
         $filesystem->put($imageName, file_get_contents($localImagePath), []);
@@ -32,13 +32,13 @@ class ImageController extends Controller
 
     }
 
-    public static function cropImageFromDropbox($name,$remoteUrl)
+    public static function cropImageFromDropbox($name, $remoteUrl)
     {
         $image = $img = \Intervention\Image\Facades\Image::make($remoteUrl);
         //image for thumb
         $img->backup();
         $destinationPath = public_path('/images/thumb');
-        $img->resize(200, 200)->save($destinationPath . '/' .$name);
+        $img->resize(200, 200)->save($destinationPath . '/' . $name);
         $img->reset();
         //image for for slider
         $destinationPath = public_path('/images/feature');

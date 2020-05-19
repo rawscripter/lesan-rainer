@@ -23,7 +23,7 @@ class ArtController extends Controller
     public function index()
     {
         $page = 'arts';
-        $arts = Art::whereArchive(0)->orderBy('created_at', 'asc')->get();
+        $arts = Art::whereArchive(0)->orderBy('created_at', 'desc')->get();
         return view('admin.art.index', compact('page', 'arts'));
     }
 
@@ -54,13 +54,14 @@ class ArtController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $dbImage = ImageController::uploadArtImageToDropbox($image);
+            $artName = $request->name;
+            $dbImage = ImageController::uploadArtImageToDropbox($artName, $image);
             $data['image'] = $dbImage['name'];
 
             $imageUrl = str_replace('?dl=0', '?dl=1', $dbImage['url']);
             $data['dropbox_url'] = $imageUrl;
-
-            ImageCropJob::dispatch($dbImage['name'], $imageUrl);
+            ImageController::cropImageFromDropbox($dbImage['name'], $imageUrl);
+            // ImageCropJob::dispatch($dbImage['name'], $imageUrl);
         }
         if (isset($request->archive)) {
             $data['archive'] = 1;
@@ -82,7 +83,8 @@ class ArtController extends Controller
             $body = 'Added a Art: ' . $art->name;
             $this->addUserLogForCollection($title, $body);
         }
-        return redirect()->back()->with('message', 'Art Added to Database');
+        return redirect(route('arts.edit', $art->id))->with('message', 'Art Added to Database');
+
     }
 
     /**
@@ -131,11 +133,13 @@ class ArtController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $dbImage = ImageController::uploadArtImageToDropbox($image);
+            $artName = $request->name;
+            $dbImage = ImageController::uploadArtImageToDropbox($artName, $image);
             $data['image'] = $dbImage['name'];
             $imageUrl = str_replace('?dl=0', '?dl=1', $dbImage['url']);
             $data['dropbox_url'] = $imageUrl;
-            ImageCropJob::dispatch($dbImage['name'], $imageUrl);
+            ImageController::cropImageFromDropbox($dbImage['name'], $imageUrl);
+            //       ImageCropJob::dispatch($dbImage['name'], $imageUrl);
         } else {
             $data['image'] = $art->image;
         }

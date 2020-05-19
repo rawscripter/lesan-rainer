@@ -79,15 +79,30 @@
                             SCULPTURES
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                             @foreach($collections as $collection)
-                                <a class="dropdown-item"
-                                   href="{{route('site.collection',$collection->name)}}">{{$collection->name}}</a>
+                                @if(strtolower($collection->name) === 'all')
+                                    <a class="dropdown-item"
+                                       href="{{route('site.collection',$collection->name)}}">{{$collection->name}}</a>
+                                @endif
+                            @endforeach
+
+                            @foreach($collections as $collection)
+                                @if(strtolower($collection->name) !== 'all')
+                                    <a class="dropdown-item"
+                                       href="{{route('site.collection',$collection->name)}}">{{$collection->name}}</a>
+                                @endif
                             @endforeach
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('site.installations')}}">INSTALLATIONS</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('site.archives')}}">ARCHIVES</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('about')}}">ABOUT</a>
                     </li>

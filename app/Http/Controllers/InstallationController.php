@@ -16,7 +16,7 @@ class InstallationController extends Controller
      */
     public function index()
     {
-        $installations = Installation::all();
+        $installations = Installation::orderBy('created_at', 'desc')->get();
         return view('admin.installtion.index', compact('installations'));
     }
 

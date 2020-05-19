@@ -135,10 +135,10 @@ Crate size:
                             {{Form::textarea('hidden_info', $defaultHiddenInfo,['class'=>'form-control','id'=>'summernote'])}}
                         </div>
 
-                        {{--                        <div class="form-group">--}}
-                        {{--                            {{Form::label('image', 'Feature Image')}}--}}
-                        {{--                            {{Form::file('image',['class'=>'dropify','required'])}}--}}
-                        {{--                        </div>--}}
+                        <div class="form-group">
+                            {{Form::label('image', 'Feature Image')}}
+                            {{Form::file('image',['class'=>'dropify','required'])}}
+                        </div>
                         <br>
                         <div class="form-group">
                             <div class="form-check">

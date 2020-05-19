@@ -116,11 +116,11 @@
                                                                                 <i class="fa fa-check icon-sm align-self-center mr-3 text-success"></i>
                                                                                 <div class="media-body">
                                                                                     {{$activeCollection->name}}
-                                                                                    <input class="related_collection active"
-                                                                                           type="hidden"
-                                                                                           value="{{$activeCollection->id}}"
-                                                                                           name="removeCollection[]">
-
+                                                                                    <input
+                                                                                        class="related_collection active"
+                                                                                        type="hidden"
+                                                                                        value="{{$activeCollection->id}}"
+                                                                                        name="">
                                                                                 </div>
                                                                             </div>
                                                                         </div>

@@ -2,6 +2,7 @@
     'use strict';
     var iconTochange;
     var relatedImage;
+    var relatedCollection;
     dragula([document.getElementById("dragula-left"), document.getElementById("dragula-right")]);
     dragula([document.getElementById("profile-list-left"), document.getElementById("profile-list-right")]);
     dragula([document.getElementById("dragula-event-left"), document.getElementById("dragula-event-right")])
@@ -22,15 +23,16 @@
     dragula([document.getElementById("dragula-event-left-collection"), document.getElementById("dragula-event-right-collection")])
         .on('drop', function (el) {
             iconTochange = $(el).find('.fa');
-            relatedImage = $(el).find('.related_collection');
+            relatedCollection = $(el).find('.related_collection');
             let divId = $(el).closest('.parentDiv').attr('id');
             if (divId === 'dragula-event-right-collection') {
                 iconTochange.removeClass('text-primary').addClass('text-danger');
-                relatedImage.attr('name', 'removeCollection[]');
+                relatedCollection.attr('name', 'removeCollection[]');
 
             } else {
-                relatedImage.removeClass('active');
-                relatedImage.attr('name', '');
+                relatedCollection.removeClass('active');
+                relatedCollection.addClass('sssssssssssssactive');
+                relatedCollection.prop('name', '');
                 iconTochange.removeClass('text-danger').addClass('text-success');
             }
 

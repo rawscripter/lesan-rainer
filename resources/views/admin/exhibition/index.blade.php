@@ -52,7 +52,7 @@
                                 @endphp
                                 @foreach($exhibitions as $exh)
                                     <tr>
-                                        <td>{{$i}}</td>
+                                        <td>{{$i--}}</td>
                                         <td><img src="/images/thumb/{{$exh->image}}" width="64" height="64" alt=""></td>
                                         <td>{{$exh->title}}</td>
                                         <td>{{$exh->year}}</td>

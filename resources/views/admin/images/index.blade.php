@@ -1,6 +1,5 @@
 @extends('layouts.admin.layout')
 @section('head')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <style>
         .table td img, .jsgrid .jsgrid-table td img {
             width: 120px;
@@ -94,18 +93,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('footer')
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="{{asset('assets/admin/js/dropify.js')}}"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('table').DataTable({
-                "order": [[0, "desc"]]
-            });
-        });
-    </script>
 @endsection

@@ -1,8 +1,4 @@
 @extends('layouts.admin.layout')
-@section('head')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-@endsection
 
 @section('content')
     <div class="content-wrapper">
@@ -57,12 +53,12 @@
                                 </thead>
                                 <tbody>
                                 @php
-                                    $i = 1;
+                                    $i = $arts->count();
                                 @endphp
                                 @if($arts->count() > 0)
                                     @foreach($arts as $art)
                                         <tr>
-                                            <td>{{$i++}}</td>
+                                            <td>{{$i--}}</td>
                                             <td>{{$art->name}}</td>
                                             <td>
                                                 @foreach ($art->collections as $c)
@@ -117,17 +113,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('footer')
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('table').DataTable({
-                "order": [[0, "desc"]]
-            });
-        });
-    </script>
 @endsection

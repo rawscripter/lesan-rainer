@@ -1,8 +1,4 @@
 @extends('layouts.admin.layout')
-@section('head')
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-@endsection
-
 @section('content')
 	<div class="content-wrapper">
 		<div class="page-header">
@@ -15,7 +11,7 @@
 		</div>
 		<div class="card">
 			<div class="card-body">
-				
+
 				@if(Session::has('message'))
 					<div class="row">
 						<div class="col-md-12 m-auto">
@@ -23,8 +19,8 @@
 						</div>
 					</div>
 				@endif
-				
-				
+
+
 				<div class="row">
 					<div class="col-12">
 						<div class="create-btn text-right">
@@ -35,7 +31,7 @@
 					<div class="col-12 mt-5">
 						<div id="order-listing_wrapper"
 						     class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-							
+
 							<table class="table  no-footer" role="grid"
 							       aria-describedby="order-listing_info">
 								<thead>
@@ -50,13 +46,13 @@
 								</tr>
 								</thead>
 								<tbody>
-								
+
 								@php
 									$i = $articles->count();
 								@endphp
 								@foreach($articles as $article)
 									<tr>
-										<td>{{$i}}</td>
+										<td>{{$i--}}</td>
 										<td><img src="/images/thumb/{{$article->image}}" alt=""></td>
 										<td>{{$article->title}}</td>
 										<td>{{$article->publish_date}}</td>
@@ -89,14 +85,3 @@
 	</div>
 @endsection
 
-@section('footer')
-	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	<script>
-      $(document).ready(function () {
-          $('table').DataTable({
-              "order": [[0, "desc"]]
-          });
-      });
-	</script>
-@endsection

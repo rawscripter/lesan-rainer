@@ -25,7 +25,7 @@ class SiteController extends Controller
         $page = 'home';
         $homePageContents = HomePageSetting::first();
         $arts = Art::orderBy('created_at', 'desc')->whereArchive(0)->take(5)->get();
-        $collections = Collection::orderBy('created_at', 'asc')->get();
+        $collections = Collection::orderBy('name', 'asc')->get();
         return view('site.index', compact('page', 'arts', 'homePageContents', 'collections'));
     }
 
@@ -34,7 +34,7 @@ class SiteController extends Controller
         $this->addVisitor();
         $page = 'about';
         $aboutPageSettings = AboutPageSetting::first();
-        $collections = Collection::orderBy('created_at', 'asc')->get();
+        $collections = Collection::orderBy('name', 'asc')->get();
         return view('site.about', compact('page', 'collections', 'aboutPageSettings'));
     }
 
@@ -42,7 +42,7 @@ class SiteController extends Controller
     {
         $this->addVisitor();
         $page = 'contact';
-        $collections = Collection::orderBy('created_at', 'asc')->get();
+        $collections = Collection::orderBy('name', 'asc')->get();
         return view('site.contact', compact('page', 'collections'));
     }
 
@@ -50,30 +50,39 @@ class SiteController extends Controller
     {
         $collection = Collection::whereName($collection)->first();
 
-        $page = 'collection';
-        $collections = Collection::orderBy('created_at', 'desc')->get();
 
-        if (strtolower($collection->name) == 'all') {
-            $arts = Art::whereArchive(0)->paginate(8);
+        $page = 'collection';
+        $collections = Collection::orderBy('name', 'desc')->get();
+
+        if (strtolower($collection->name) == 'show all') {
+            $arts = Art::whereArchive(0)->orderBy('created_at', 'desc')->latest()->paginate(8);
         } else {
-            $arts = Art::where('collection_id', $collection->id)->whereArchive(0)->paginate(8);
+            $arts = $collection->arts()->paginate(6);
         }
 
         return view('site.collection', compact('collections', 'page', 'collection', 'arts'));
+    }
+
+
+    public function archives()
+    {
+        $collections = Collection::orderBy('name', 'desc')->get();
+        $arts = Art::whereArchive(1)->orderBy('created_at', 'desc')->latest()->paginate(8);
+        return view('site.collection', compact('collections', 'page',  'arts'));
     }
 
     public function showArchives()
     {
         $page = 'collection';
         $collections = Collection::orderBy('created_at', 'asc')->get();
-        $arts = Art::where('archive', 1)->orderBy('created_at', 'desc')->get();
+        $arts = Art::where('archive', 1)->orderBy('name', 'desc')->get();
         return view('site.collection', compact('collections', 'page', 'arts'));
     }
 
     public function showInstallations()
     {
         $page = 'installations';
-        $collections = Collection::orderBy('created_at', 'desc')->get();
+        $collections = Collection::orderBy('name', 'desc')->get();
         if (isset($_GET['filter'])) {
             $type = $_GET['filter'];
             $installations = Installation::where('type', $type)->paginate(8);

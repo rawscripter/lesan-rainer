@@ -1,8 +1,4 @@
 @extends('layouts.admin.layout')
-@section('head')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-@endsection
-
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
@@ -97,17 +93,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('footer')
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('table').DataTable({
-                "order": [[0, "desc"]]
-            });
-        });
-    </script>
 @endsection

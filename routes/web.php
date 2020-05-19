@@ -1,9 +1,13 @@
 <?php
+
+use App\Http\Controllers\ImageController;
+
 Auth::routes();
 // request for home page
 Route::get('/', 'SiteController@index')->name('site.home');
 Route::get('/user/logout', 'SiteController@logout')->name('site.logout');
 Route::get('/about', 'SiteController@about')->name('about');
+Route::get('/archives', 'SiteController@archives')->name('site.archives');
 Route::get('/articles', 'SiteController@articles')->name('articles');
 Route::get('/article/{slug}', 'SiteController@readArticle')->name('read.article');
 Route::get('/exhibitions', 'SiteController@exhibitions')->name('exhibitions');
@@ -21,8 +25,6 @@ Route::get('/installation/{installation}/details', 'SiteController@installationD
 
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
-
-
     Route::get('/admin', 'AdminController@home')->name('admin.home');
     Route::resource('/admin/collections', 'CollectionController');
     Route::resource('/admin/arts', 'ArtController');
@@ -44,26 +46,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/test', function () {
-    $name = 'hello.png';
-    $image = 'https://www.dropbox.com/s/d31yx0fej59v1nx/7d4c4af0-897b-11ea-b2e4-c9e8b225dc5e.jpg?dl=1';
-    try {
-        \App\Http\Controllers\ImageController::cropImageFromDropbox($name, $image);
-    } catch (Exception $exception) {
-        return $exception->getMessage();
-    }
-});
-
-
 //for clear site cache
 Route::get('/clear-cache', function () {
     Artisan::call('cache:clear');
     Artisan::call('view:clear');
     Artisan::call('route:clear');
     Artisan::call('config:cache');
-    Artisan::call('queue:work --once');
     return 'cache cleared';
 });
+
+
 
 
 

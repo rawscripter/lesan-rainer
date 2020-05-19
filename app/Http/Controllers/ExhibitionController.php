@@ -15,7 +15,7 @@ class ExhibitionController extends Controller
      */
     public function index()
     {
-        $exhibitions = Exhibition::all();
+        $exhibitions = Exhibition::orderBy('created_at', 'desc')->get();
         return view('admin.exhibition.index', compact('exhibitions'));
     }
 

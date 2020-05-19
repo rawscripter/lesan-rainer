@@ -35,4 +35,17 @@ class Art extends Model
     {
         return $this->belongsToMany(Collection::class, 'art_collections');
     }
+
+    public function isItHasFeatureImage()
+    {
+        if (empty($this->image))
+            return false;
+        $artImg = public_path('/images/feature/' . $this->image);
+        if (file_exists($artImg)) {
+            return true;
+        }
+        return false;
+    }
+
+
 }

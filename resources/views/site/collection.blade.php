@@ -11,14 +11,19 @@
 		<div class="colection_content">
 			<div class="container">
 				@if($arts->count())
-					
+
 					<div class="infinite-scroll">
 						<div class="row m-0 p-0 ">
 							@foreach($arts as $art)
 								<div class="col-md-6 col-lg-6">
 									<div class="collection_single">
 										<div class="collection_image">
-											<img width="80%" src="/images/feature/{{$art->image}}" alt="collection-image">
+                                            @if($art->isItHasFeatureImage())
+                                                <img width="80%" src="/images/feature/{{$art->image}}" alt="collection-image">
+                                            @else
+                                                <img width="80%" src="{{$art->dropbox_url}}" alt="collection-image">
+                                            @endif
+
 											<div class="collection_shadow callArtDetailsModal" data-art="{{$art->id}}">
 												<h5>
 													<p>click to view
@@ -32,7 +37,7 @@
 							@endforeach
 						</div>
 						{{$arts->links()}}
-					
+
 					</div>
 				@else
 					<div
@@ -43,10 +48,10 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<div id="callBackModal">
-	
+
 	</div>
 @endsection
 

@@ -58,8 +58,8 @@
 <div class="header center " style="margin-bottom: 10px;">
     <h3><strong>RAINER LAGEMANN</strong></h3>
 </div>
-<div class="header" style="position:relative; top:10; width:50%; margin: 0 auto ">
-    <img src="{{ public_path("images/arts/".$art->image) }}" style="max-width: 100%">
+<div class="header" style="position:relative; top:10px; width:50%; margin: 0 auto ">
+    <img src="{{ public_path("images/feature/".$art->image) }}" style="max-width: 100%">
 </div>
 <div class="content center  midtop">
     <h3>{{$art->name}}</h3>
