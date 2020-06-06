@@ -13,7 +13,10 @@ Route::get('/article/{slug}', 'SiteController@readArticle')->name('read.article'
 Route::get('/exhibitions', 'SiteController@exhibitions')->name('exhibitions');
 Route::get('/exhibitions/{exhibition}/details', 'SiteController@showExhibitionDetailsModal');
 Route::get('/contact-us', 'SiteController@contact')->name('contact');
+
 Route::get('/sculptures/{collection}', 'SiteController@showCollection')->name('site.collection');
+Route::get('/sculptures/{collection}/archive', 'SiteController@showArchiveCollection')->name('site.archive.collection');
+
 Route::get('/installations', 'SiteController@showInstallations')->name('site.installations');
 Route::get('/archives/collections', 'SiteController@showArchives')->name('site.collection.archives');
 Route::get('/art/{art}/details', 'SiteController@artDetailsModal')->name('art.details.modal');

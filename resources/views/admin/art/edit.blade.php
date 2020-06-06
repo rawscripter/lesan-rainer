@@ -302,10 +302,7 @@
     <script !src="">
         /*Summernote editor*/
         if ($("#summernote").length) {
-            $('#summernote').summernote({
-                height: 300,
-                tabsize: 2
-            });
+            $('#summernote').summernote('fontSize', 16);
         }
 
         Dropzone.autoDiscover = false;

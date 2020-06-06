@@ -23,6 +23,12 @@ class Collection extends Model
 
     public function arts()
     {
-        return $this->belongsToMany(Art::class, 'art_collections')->orderBy('created_at', 'desc');
+        return $this->belongsToMany(Art::class, 'art_collections')->whereArchive(0)->orderBy('created_at', 'desc');
     }
+
+    public function archiveArts()
+    {
+        return $this->belongsToMany(Art::class, 'art_collections')->whereArchive(1)->orderBy('created_at', 'desc');
+    }
+
 }

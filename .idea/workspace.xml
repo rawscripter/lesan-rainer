@@ -2,44 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52140739-b501-4b0e-a6ad-085ddff091cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/What is Lorem Ipsum 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/b769c540-8c5c-11ea-8bac-01b56bf9db44.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/feature/test-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/What is Lorem Ipsum 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/b769c540-8c5c-11ea-8bac-01b56bf9db44.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/thumb/test-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aljoe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aljoe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Art.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Art.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArtController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArtController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExhibitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExhibitionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InstallationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InstallationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/js/dragula.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/js/dragula.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/art/archives.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/art/archives.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/art/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/art/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/art/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/art/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/art/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/art/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/article/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/article/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/collection/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/collection/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/exhibition/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exhibition/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/images/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/images/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/installtion/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/installtion/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/user/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/user/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/art-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/art-modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/art-pdf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/art-pdf.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/collection.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/collection.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,19 +214,19 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\shuvo\Desktop\projects\lesan\rainer\public" />
-      <recent name="C:\Users\shuvo\Desktop\projects\lesan\rainer\storage" />
-      <recent name="C:\xampp\htdocs\lesan\aljoe\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\lesan\aljoe\public\assets" />
-      <recent name="C:\xampp\htdocs\lesan\aljoe\resources\views\site" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\shuvo\Desktop\projects\lesan\rainer\resources\views\admin\user" />
       <recent name="C:\Users\shuvo\Desktop\projects\lesan\rainer\resources\views\site" />
       <recent name="C:\xampp\htdocs\lesan\rainer\resources\views\admin\exhibition" />
       <recent name="C:\xampp\htdocs\lesan\rainer\resources\views\admin\article" />
       <recent name="C:\xampp\htdocs\lesan\rainer\resources\views\site" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shuvo\Desktop\projects\lesan\rainer\public" />
+      <recent name="C:\Users\shuvo\Desktop\projects\lesan\rainer\storage" />
+      <recent name="C:\xampp\htdocs\lesan\aljoe\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\lesan\aljoe\public\assets" />
+      <recent name="C:\xampp\htdocs\lesan\aljoe\resources\views\site" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -367,6 +337,20 @@
       <workItem from="1589552501075" duration="8000" />
       <workItem from="1589616327696" duration="152000" />
       <workItem from="1589818804603" duration="770000" />
+      <workItem from="1589884184441" duration="655000" />
+      <workItem from="1589894047817" duration="20000" />
+      <workItem from="1589964226151" duration="571000" />
+      <workItem from="1589965389936" duration="1069000" />
+      <workItem from="1589980908075" duration="2395000" />
+      <workItem from="1590156340982" duration="535000" />
+      <workItem from="1590158266516" duration="495000" />
+      <workItem from="1590172012407" duration="1064000" />
+      <workItem from="1590176447957" duration="101000" />
+      <workItem from="1590491804698" duration="20000" />
+      <workItem from="1590507937647" duration="49000" />
+      <workItem from="1591126405164" duration="310000" />
+      <workItem from="1591169402502" duration="13000" />
+      <workItem from="1591476782013" duration="276000" />
     </task>
     <servers />
   </component>
@@ -469,10 +453,10 @@
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584712679376" />
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1584440951486" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1589819034976">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1591477053657">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1589819034976" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591477053657" />
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588193099318" />
     <state width="498" height="448" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1584505804286" />
     <state x="429" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584443719714">
@@ -492,16 +476,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="778" y="190" key="ftp.server.browser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584712674883" />
-    <state x="616" y="250" width="672" height="677" key="run.anything.popup" timestamp="1589819573264">
+    <state x="616" y="250" width="672" height="677" key="run.anything.popup" timestamp="1591169413874">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1589819573264" />
-    <state x="2536" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589616477958" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1589819171175">
+    <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591169413874" />
+    <state x="2536" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591126410503" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1591476937325">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1589819171175" />
-    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589616428477" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591476937325" />
+    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590156488707" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1584505885582" />
   </component>
 </project>

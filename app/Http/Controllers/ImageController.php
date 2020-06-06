@@ -19,10 +19,11 @@ class ImageController extends Controller
 
     public static function uploadArtImageToDropbox($artName, $image)
     {
-        $dropboxClient = new Client('E3t4lWz1AIAAAAAAAAACG_nYzxTovatEutZbjFAF7uwyjHckQz6sBh98wLBzcnUu');
+        $dropboxClient = new Client('vkkVn-uWGfAAAAAAAAACXHhONCYmDgc6ACMu560AZQouGCRQNeQpGtAdK7c03bSw');
         $adapter = new DropboxAdapter($dropboxClient);
         $filesystem = new Filesystem($adapter);
-        $imageName = $artName . '.' . $image->getClientOriginalExtension();
+
+        $imageName = $artName . '-' . time() . '.' . $image->getClientOriginalExtension();
         $localImagePath = $image->getRealPath();
 
         $filesystem->put($imageName, file_get_contents($localImagePath), []);

@@ -3,11 +3,21 @@
         margin-top: 0px !important;
     }
 
-    .art_desc p {
+    .art_desc p, .art_desc p span {
         padding: 0px;
         margin: 0px;
+        box-shadow: 0 0 black;
+        font-weight: normal;
+        letter-spacing: 1px;
+        line-height: 24px;
     }
 
+    .art_desc p, .art_desc p span {
+        font-size: 16px !important;
+    }
+    .art_desc{
+        overflow: auto;
+    }
 
 </style>
 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
@@ -70,6 +80,7 @@
                             <p class="show-text-as-white-space" style="font-size: 16px">
                                 {!! $art->description !!}
                             </p>
+                            <br>
                             <h3 style="font-size: 16px">{{$art->size1}} | {{$art->size2}}</h3>
 
                             @auth()
@@ -148,4 +159,6 @@
         s = s.replace('Available', '<span style="color:green">Available</span>');
         tables[i].innerHTML = s;
     }
+
+
 </script>

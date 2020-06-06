@@ -100,6 +100,7 @@
 
                         @php
                             $defaultArtInfo = 'Stainless steel sculpture of a
+
 Cut steel pipe, welded, powder coated in all RL colors
 
 Wall mounted / Free standing / Hanging
@@ -107,18 +108,18 @@ Wall mounted / Free standing / Hanging
 Edition of 9
 
 2 Artist Proofs';
-                                $defaultHiddenInfo = '<p>Retail US$
+                                $defaultHiddenInfo = '<p><span style="font-size: 16px;">﻿</span>Retail US$
 
-Edition</p><p><br></p><p> </p><p>1 of 9: Available</p><p><br></p><p>Edition 2 of 9: Available
-</p><p>Edition 3 of 9: Available
-</p><p>Edition 4 of 9: Available
-</p><p>Edition 5 of 9: Available
-</p><p>Edition 6 of 9: Available
-</p><p>Edition 7 of 9: Available
-</p><p>Edition 8 of 9: Available
-</p><p>Edition 9 of 9: Available
+</p><p><br></p><p> </p><p><span style="font-weight: initial;">Edition 1 of 9:</span><span style="font-weight: initial;">&nbsp;</span>&nbsp;Available</p><p><br></p><p>Edition 2 of 9: Available</p><p><br></p><p>
+</p><p>Edition 3 of 9: Available</p><p><br></p><p>
+</p><p>Edition 4 of 9: Available</p><p><br></p><p>
+</p><p>Edition 5 of 9: Available</p><p><br></p><p>
+</p><p>Edition 6 of 9: Available</p><p><br></p><p>
+</p><p>Edition 7 of 9: Available</p><p><br></p><p>
+</p><p>Edition 8 of 9: Available</p><p><br></p><p>
+</p><p>Edition 9 of 9: Available</p><p><br></p><p>
 </p><p>
-AP 1 of 2: Available
+AP 1 of 2: Available</p><p><br></p><p>
 </p><p>AP 2 of 2: Available</p><p><br></p><p>
 </p><p>
 Crate size:
@@ -182,10 +183,7 @@ Crate size:
     <script !src="">
         /*Summernote editor*/
         if ($("#summernote").length) {
-            $('#summernote').summernote({
-                height: 300,
-                tabsize: 2
-            });
+            $('#summernote').summernote('fontSize', 16);
         }
     </script>
 @endsection

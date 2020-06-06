@@ -46,18 +46,31 @@ class SiteController extends Controller
         return view('site.contact', compact('page', 'collections'));
     }
 
-    public function showCollection($collection)
+    public function showCollection(Collection $collection)
     {
-        $collection = Collection::whereName($collection)->first();
-
 
         $page = 'collection';
-        $collections = Collection::orderBy('name', 'desc')->get();
+        $collections = Collection::orderBy('name', 'asc')->get();
 
-        if (strtolower($collection->name) == 'show all') {
+        if (strtolower($collection->name) == 'all') {
             $arts = Art::whereArchive(0)->orderBy('created_at', 'desc')->latest()->paginate(8);
         } else {
             $arts = $collection->arts()->paginate(6);
+        }
+
+        return view('site.collection', compact('collections', 'page', 'collection', 'arts'));
+    }
+
+    public function showArchiveCollection(Collection $collection)
+    {
+
+        $page = 'collection';
+        $collections = Collection::orderBy('name', 'asc')->get();
+
+        if (strtolower($collection->name) == 'all') {
+            $arts = Art::whereArchive(1)->orderBy('created_at', 'desc')->latest()->paginate(8);
+        } else {
+            $arts = $collection->archiveArts()->paginate(6);
         }
 
         return view('site.collection', compact('collections', 'page', 'collection', 'arts'));
@@ -68,7 +81,7 @@ class SiteController extends Controller
     {
         $collections = Collection::orderBy('name', 'desc')->get();
         $arts = Art::whereArchive(1)->orderBy('created_at', 'desc')->latest()->paginate(8);
-        return view('site.collection', compact('collections', 'page',  'arts'));
+        return view('site.collection', compact('collections', 'page', 'arts'));
     }
 
     public function showArchives()
